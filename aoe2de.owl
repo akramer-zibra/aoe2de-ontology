@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://github.com/akramer-zibra/aoe2de-ontology">
+    <Prefix name="" IRI="https://github.com/akramer-zibra/aoe2de-ontology"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -16,31 +17,46 @@
         <Literal xml:lang="de">Diese Ontology beschreibt Zusammenhänge der Entitäten on Age of Empires 2 Defenitive Edition</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#AccuracyUpgrade"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Age"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Attackable"/>
+        <Class IRI="#ArmorUpgrade"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#AttackUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bonus"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Building"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BuildingCategory"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Category"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CavalryUnit"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Civilization"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#ConversionDefenseUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CreationSpeedUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EliteUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HitpointsUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RangeUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpeedUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TeamBonus"/>
     </Declaration>
     <Declaration>
         <Class IRI="#UniqueUnit"/>
@@ -49,28 +65,25 @@
         <Class IRI="#Unit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#UnitCategory"/>
+        <Class IRI="#UnitType"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Upgrade"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WaterUnit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#availableSince"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#belongsTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#effects"/>
+        <ObjectProperty IRI="#affects"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasBonus"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasBuilding"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasUnit"/>
@@ -79,13 +92,19 @@
         <ObjectProperty IRI="#hasUpgrade"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isAgainst"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isStrongAgainst"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUpgradeOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isWeakAgainst"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requires"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Arambai"/>
@@ -97,10 +116,19 @@
         <NamedIndividual IRI="#Archer"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Archery"/>
+        <NamedIndividual IRI="#ArcherType"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#AttackingBuilding"/>
+        <NamedIndividual IRI="#ArcheryRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Aztecs"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BallistaElephant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Barracks"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#BatteringRam"/>
@@ -109,7 +137,25 @@
         <NamedIndividual IRI="#BattleElephant"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Berbers"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Berserk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Blacksmith"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#BombardCannon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BombardTower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Boyar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Britons"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Bulgarians"/>
@@ -118,13 +164,22 @@
         <NamedIndividual IRI="#Burmese"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Byzantines"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CamelArcher"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#CamelRider"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CannonGalleon"/>
+        <NamedIndividual IRI="#CannonGalley"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CappedRam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Caravel"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Castle"/>
@@ -133,19 +188,40 @@
         <NamedIndividual IRI="#CastleAge"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Cavalier"/>
+        <NamedIndividual IRI="#Cataphract"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Cavalry"/>
+        <NamedIndividual IRI="#Cavalier"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CavalryArcher"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#CavalryType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Celts"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Champion"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Chinese"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ChuKoNu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Condottiero"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Conquistador"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Crossbowman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cumans"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DarkAge"/>
@@ -157,25 +233,121 @@
         <NamedIndividual IRI="#DemolitionShip"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Dock"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#EagleScout"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EagleWarrior"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ElephantArcher"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#EliteArambai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EliteBattleElephant"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#EliteCannonGalleon"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteBoyar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteCannonGalley"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteCaravel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteCataphract"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteConquistador"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EliteEagleWarrior"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteGbeto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteGenitour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteJaguarWarrior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteJanissary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteKeshik"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteKipchak"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#EliteKonnik"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteLeitis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteLongboat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteMameluke"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteMangudai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteSamurai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EliteSkirmisher"/>
@@ -184,7 +356,37 @@
         <NamedIndividual IRI="#EliteSteppeLancer"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#EliteTarkan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ethiopians"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Farm"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#FastFireShip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Feitoria"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#FeudalAge"/>
@@ -196,7 +398,19 @@
         <NamedIndividual IRI="#FireShip"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#FishTrap"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#FishingShip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FlamingCamel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FortifiedWall"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Franks"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Galleon"/>
@@ -205,10 +419,34 @@
         <NamedIndividual IRI="#Galley"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Gate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gbeto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Genitour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Goths"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GuardTower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GunpowderType"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Halberdier"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HandCannoneer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HealerType"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HeavyCamelRider"/>
@@ -223,13 +461,64 @@
         <NamedIndividual IRI="#HeavyScorpion"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#House"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Huns"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Huskarl"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Hussar"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ImperialAge"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Infantry"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ImperialSkirmisher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Incas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Indians"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InfantryType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Italians"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Janissary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Japanese"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kamayuk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Keep"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Keshik"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Khmer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kipchak"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Knight"/>
@@ -238,37 +527,130 @@
         <NamedIndividual IRI="#Konnik"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Koreans"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Krepost"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Leitis"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#LightCavalry"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lithuanians"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#LongSwordsman"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ManAtArms"/>
+        <NamedIndividual IRI="#Longboat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Longbowman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LumberCamp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Magyars"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Malay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Malians"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mameluke"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Mangonel"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Mangudai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Market"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mayans"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MenAtArms"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Militia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mill"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MiningCamp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Missionary"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Monastery"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Mongols"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Monk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MonkType"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Onager"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#OrganGun"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Outpost"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Paladin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PalisadeGate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PalisadeWall"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Persians"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Petard"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#PetardType"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Pikeman"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlumedArcher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Portuguese"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RattanArcher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Samurai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Saracens"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Scorpion"/>
@@ -277,7 +659,10 @@
         <NamedIndividual IRI="#ScoutCavalry"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Siege"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShotelWarrior"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SiegeOnager"/>
@@ -289,13 +674,49 @@
         <NamedIndividual IRI="#SiegeTower"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#SiegeType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SiegeWorkshop"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Skirmisher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Slavs"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Slinger"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Spanish"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Spearman"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Stable"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#SteppeLancer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StoneWall"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tarkan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tatars"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Teutons"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#TownCenter"/>
@@ -307,101 +728,164 @@
         <NamedIndividual IRI="#TradeCog"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#TrainingBuilding"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#TransportShip"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Trebuchet"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Turks"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TurtleShip"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#TwoHandedSwordsman"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#UpgradingBuilding"/>
+        <NamedIndividual IRI="#University"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vietnamese"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vikings"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Villager"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#WarElephant"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#WarGalley"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WarWagon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WatchTower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wonder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WoodRaider"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XolotlWarrior"/>
+    </Declaration>
     <SubClassOf>
-        <Class IRI="#AttackingUnit"/>
-        <Class IRI="#Unit"/>
+        <Class IRI="#AccuracyUpgrade"/>
+        <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Building"/>
-        <Class IRI="#Attackable"/>
+        <Class IRI="#ArmorUpgrade"/>
+        <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BuildingCategory"/>
-        <Class IRI="#Category"/>
+        <Class IRI="#AttackUpgrade"/>
+        <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CavalryUnit"/>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#ConversionDefenseUpgrade"/>
+        <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#RangeUnit"/>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#CreationSpeedUpgrade"/>
+        <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EliteUpgrade"/>
+        <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HitpointsUpgrade"/>
+        <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RangeUpgrade"/>
+        <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpeedUpgrade"/>
+        <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TeamBonus"/>
+        <Class IRI="#Bonus"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#UniqueUnit"/>
         <Class IRI="#Unit"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Unit"/>
-        <Class IRI="#Attackable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#UnitCategory"/>
-        <Class IRI="#Category"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#WaterUnit"/>
-        <Class IRI="#Unit"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
-        <NamedIndividual IRI="#Arambai"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
-        <NamedIndividual IRI="#Arambai"/>
-    </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#UniqueUnit"/>
         <NamedIndividual IRI="#Arambai"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Arbalester"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Archer"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#UnitCategory"/>
-        <NamedIndividual IRI="#Archery"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#ArcherType"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#BuildingCategory"/>
-        <NamedIndividual IRI="#AttackingBuilding"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#ArcheryRange"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Aztecs"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Barracks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#BatteringRam"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#BattleElephant"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Berbers"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Berserk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Blacksmith"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#BombardCannon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#BombardTower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Boyar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Britons"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Civilization"/>
@@ -412,16 +896,28 @@
         <NamedIndividual IRI="#Burmese"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Byzantines"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#CamelRider"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
-        <NamedIndividual IRI="#CannonGalleon"/>
+        <Class IRI="#Unit"/>
+        <NamedIndividual IRI="#CannonGalley"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#CappedRam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Caravel"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Building"/>
@@ -432,151 +928,383 @@
         <NamedIndividual IRI="#CastleAge"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Cataphract"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Cavalier"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#UnitCategory"/>
-        <NamedIndividual IRI="#Cavalry"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#CavalryArcher"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
-        <NamedIndividual IRI="#CavalryArcher"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#CavalryType"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Celts"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Champion"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Chinese"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ChuKoNu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Condottiero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Conquistador"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Crossbowman"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Cumans"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Age"/>
         <NamedIndividual IRI="#DarkAge"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#DemolitionRaft"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#DemolitionShip"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#EagleScout"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#EagleWarrior"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
-        <NamedIndividual IRI="#EliteArambai"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
-        <NamedIndividual IRI="#EliteArambai"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#UniqueUnit"/>
         <NamedIndividual IRI="#EliteArambai"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#EliteBattleElephant"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
-        <NamedIndividual IRI="#EliteCannonGalleon"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteBoyar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
+        <NamedIndividual IRI="#EliteCannonGalley"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteCaravel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteCataphract"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#EliteEagleWarrior"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
-        <NamedIndividual IRI="#EliteKonnik"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteGbeto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteJaguarWarrior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteJanissary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteKeshik"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#UniqueUnit"/>
         <NamedIndividual IRI="#EliteKonnik"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteLeitis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteLongboat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteMameluke"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteSamurai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#EliteSkirmisher"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#EliteSteppeLancer"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Ethiopians"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Farm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#FastFireShip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Feitoria"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Age"/>
         <NamedIndividual IRI="#FeudalAge"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#FireGalley"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
-        <NamedIndividual IRI="#FireGalley"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#FireShip"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
-        <NamedIndividual IRI="#FireShip"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#FishTrap"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#FishingShip"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#FlamingCamel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#FortifiedWall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Franks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Galleon"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Galley"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Gate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Gbeto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Genitour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Goths"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#GuardTower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#GunpowderType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Halberdier"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#HandCannoneer"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#HealerType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#HeavyCamelRider"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#HeavyCavalryArcher"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#HeavyDemolitionShip"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#HeavyScorpion"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#House"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Huns"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Huskarl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Hussar"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -584,83 +1312,263 @@
         <NamedIndividual IRI="#ImperialAge"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#UnitCategory"/>
-        <NamedIndividual IRI="#Infantry"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ImperialSkirmisher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Incas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Indians"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Italians"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Janissary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Japanese"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Kamayuk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Keep"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Keshik"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Khmer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Kipchak"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Knight"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
-        <NamedIndividual IRI="#Konnik"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#UniqueUnit"/>
         <NamedIndividual IRI="#Konnik"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Koreans"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Krepost"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Leitis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#LightCavalry"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Lithuanians"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#LongSwordsman"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
-        <NamedIndividual IRI="#ManAtArms"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Longboat"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Longbowman"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#LumberCamp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Magyars"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Malay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Malians"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Mameluke"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Mangonel"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Mangudai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Market"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Mayans"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
+        <NamedIndividual IRI="#MenAtArms"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Militia"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#UnitCategory"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Mill"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#MiningCamp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Missionary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
         <NamedIndividual IRI="#Monastery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Mongols"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Monk"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#MonkType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Onager"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#OrganGun"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Outpost"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Paladin"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#PalisadeGate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#PalisadeWall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Persians"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Petard"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#PetardType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Pikeman"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#PlumedArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Portuguese"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#RattanArcher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Samurai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Saracens"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Scorpion"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#ScoutCavalry"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#UnitCategory"/>
-        <NamedIndividual IRI="#Siege"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#ShipType"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ShotelWarrior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#SiegeOnager"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#SiegeRam"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -668,16 +1576,64 @@
         <NamedIndividual IRI="#SiegeTower"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#UnitType"/>
+        <NamedIndividual IRI="#SiegeType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#SiegeWorkshop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Skirmisher"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Slavs"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Slinger"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Spanish"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Spearman"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Stable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#SteppeLancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#StoneWall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#Tarkan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Tatars"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Teutons"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Building"/>
@@ -688,145 +1644,1869 @@
         <NamedIndividual IRI="#TradeCart"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#TradeCog"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#BuildingCategory"/>
-        <NamedIndividual IRI="#TrainingBuilding"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#TransportShip"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#RangeUnit"/>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Trebuchet"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Turks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#TurtleShip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#TwoHandedSwordsman"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#BuildingCategory"/>
-        <NamedIndividual IRI="#UpgradingBuilding"/>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#University"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AttackingUnit"/>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Vietnamese"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Civilization"/>
+        <NamedIndividual IRI="#Vikings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#Villager"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#WaterUnit"/>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#WarElephant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unit"/>
         <NamedIndividual IRI="#WarGalley"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#WarWagon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#WatchTower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#Wonder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#WoodRaider"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueUnit"/>
+        <NamedIndividual IRI="#XolotlWarrior"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
         <NamedIndividual IRI="#Arambai"/>
-        <NamedIndividual IRI="#Archery"/>
+        <NamedIndividual IRI="#ArcherType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
         <NamedIndividual IRI="#Arambai"/>
-        <NamedIndividual IRI="#Cavalry"/>
+        <NamedIndividual IRI="#CavalryType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasUnit"/>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Arambai"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Arambai"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Aztecs"/>
+        <NamedIndividual IRI="#EliteJaguarWarrior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Aztecs"/>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+        <NamedIndividual IRI="#SiegeType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Berbers"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Berbers"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Berbers"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Berbers"/>
+        <NamedIndividual IRI="#Genitour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Berserk"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Berserk"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Berserk"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Boyar"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Boyar"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Boyar"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Britons"/>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Britons"/>
+        <NamedIndividual IRI="#Longbowman"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
         <NamedIndividual IRI="#Bulgarians"/>
         <NamedIndividual IRI="#EliteKonnik"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasUnit"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
         <NamedIndividual IRI="#Bulgarians"/>
         <NamedIndividual IRI="#Konnik"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasUnit"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
         <NamedIndividual IRI="#Burmese"/>
         <NamedIndividual IRI="#Arambai"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasUnit"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
         <NamedIndividual IRI="#Burmese"/>
         <NamedIndividual IRI="#EliteArambai"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#Castle"/>
-        <NamedIndividual IRI="#AttackingBuilding"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Byzantines"/>
+        <NamedIndividual IRI="#Cataphract"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#Castle"/>
-        <NamedIndividual IRI="#TrainingBuilding"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Byzantines"/>
+        <NamedIndividual IRI="#EliteCataphract"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#Castle"/>
-        <NamedIndividual IRI="#UpgradingBuilding"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Caravel"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Caravel"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Caravel"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#CastleAge"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#CastleAge"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Cataphract"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Cataphract"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Cataphract"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Celts"/>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Celts"/>
+        <NamedIndividual IRI="#WoodRaider"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Chinese"/>
+        <NamedIndividual IRI="#ChuKoNu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Chinese"/>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ChuKoNu"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ChuKoNu"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ChuKoNu"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Condottiero"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Condottiero"/>
+        <NamedIndividual IRI="#Barracks"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Condottiero"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Conquistador"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Conquistador"/>
+        <NamedIndividual IRI="#GunpowderType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Conquistador"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Conquistador"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Cumans"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Cumans"/>
+        <NamedIndividual IRI="#Kipchak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
         <NamedIndividual IRI="#EliteArambai"/>
-        <NamedIndividual IRI="#Archery"/>
+        <NamedIndividual IRI="#ArcherType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
         <NamedIndividual IRI="#EliteArambai"/>
-        <NamedIndividual IRI="#Cavalry"/>
+        <NamedIndividual IRI="#CavalryType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteArambai"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteArambai"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+        <NamedIndividual IRI="#SiegeType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteBoyar"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteBoyar"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteBoyar"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteCaravel"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteCaravel"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteCaravel"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteCataphract"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteCataphract"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteCataphract"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+        <NamedIndividual IRI="#GunpowderType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteGbeto"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteGbeto"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteGbeto"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+        <NamedIndividual IRI="#ArcheryRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteJaguarWarrior"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteJaguarWarrior"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteJanissary"/>
+        <NamedIndividual IRI="#GunpowderType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteJanissary"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteJanissary"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteKeshik"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKeshik"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKeshik"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
         <NamedIndividual IRI="#EliteKonnik"/>
-        <NamedIndividual IRI="#Cavalry"/>
+        <NamedIndividual IRI="#CavalryType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isStrongAgainst"/>
+        <ObjectProperty IRI="#requires"/>
         <NamedIndividual IRI="#EliteKonnik"/>
-        <NamedIndividual IRI="#Archery"/>
+        <NamedIndividual IRI="#Castle"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isStrongAgainst"/>
+        <ObjectProperty IRI="#requires"/>
         <NamedIndividual IRI="#EliteKonnik"/>
-        <NamedIndividual IRI="#Infantry"/>
+        <NamedIndividual IRI="#ImperialAge"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteKonnik"/>
+        <NamedIndividual IRI="#Krepost"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteLeitis"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteLeitis"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteLeitis"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteLongboat"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteLongboat"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteLongboat"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteMameluke"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteMameluke"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteMameluke"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+        <NamedIndividual IRI="#SiegeType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteSamurai"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteSamurai"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteSamurai"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Ethiopians"/>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Ethiopians"/>
+        <NamedIndividual IRI="#ShotelWarrior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#FlamingCamel"/>
+        <NamedIndividual IRI="#PetardType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#FlamingCamel"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#FlamingCamel"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Franks"/>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Franks"/>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Gbeto"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Gbeto"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Gbeto"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Genitour"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Genitour"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Genitour"/>
+        <NamedIndividual IRI="#ArcheryRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Genitour"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Goths"/>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Goths"/>
+        <NamedIndividual IRI="#Huskarl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Huns"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Huns"/>
+        <NamedIndividual IRI="#Tarkan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Huskarl"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Huskarl"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Huskarl"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+        <NamedIndividual IRI="#Tarkan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
+        <NamedIndividual IRI="#ImperialAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
+        <NamedIndividual IRI="#Stable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Incas"/>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Incas"/>
+        <NamedIndividual IRI="#Kamayuk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Incas"/>
+        <NamedIndividual IRI="#Slinger"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Indians"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Indians"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Indians"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Italians"/>
+        <NamedIndividual IRI="#Condottiero"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Italians"/>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Italians"/>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Janissary"/>
+        <NamedIndividual IRI="#GunpowderType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Janissary"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Janissary"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Japanese"/>
+        <NamedIndividual IRI="#EliteSamurai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Japanese"/>
+        <NamedIndividual IRI="#Samurai"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Kamayuk"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Kamayuk"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Kamayuk"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Keshik"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Keshik"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Keshik"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Khmer"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Kipchak"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Kipchak"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Kipchak"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Kipchak"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
         <NamedIndividual IRI="#Konnik"/>
-        <NamedIndividual IRI="#Cavalry"/>
+        <NamedIndividual IRI="#CavalryType"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isStrongAgainst"/>
+        <ObjectProperty IRI="#requires"/>
         <NamedIndividual IRI="#Konnik"/>
-        <NamedIndividual IRI="#Archery"/>
+        <NamedIndividual IRI="#Castle"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isStrongAgainst"/>
+        <ObjectProperty IRI="#requires"/>
         <NamedIndividual IRI="#Konnik"/>
-        <NamedIndividual IRI="#Infantry"/>
+        <NamedIndividual IRI="#CastleAge"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#Monk"/>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Konnik"/>
+        <NamedIndividual IRI="#Krepost"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Koreans"/>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Koreans"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Koreans"/>
+        <NamedIndividual IRI="#TurtleShip"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Koreans"/>
+        <NamedIndividual IRI="#WarWagon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Leitis"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Leitis"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Leitis"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Lithuanians"/>
+        <NamedIndividual IRI="#EliteLeitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Lithuanians"/>
+        <NamedIndividual IRI="#Leitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Longboat"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Longboat"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Longboat"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Longbowman"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Longbowman"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Longbowman"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Magyars"/>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Magyars"/>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Malay"/>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Malay"/>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Malians"/>
+        <NamedIndividual IRI="#EliteGbeto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Malians"/>
+        <NamedIndividual IRI="#Gbeto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Mameluke"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Mameluke"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Mameluke"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Mangudai"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Mangudai"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Mangudai"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Mangudai"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Mayans"/>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Mayans"/>
+        <NamedIndividual IRI="#PlumedArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Missionary"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Missionary"/>
+        <NamedIndividual IRI="#HealerType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Missionary"/>
+        <NamedIndividual IRI="#MonkType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Missionary"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Missionary"/>
         <NamedIndividual IRI="#Monastery"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#TownCenter"/>
-        <NamedIndividual IRI="#AttackingBuilding"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Mongols"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#TownCenter"/>
-        <NamedIndividual IRI="#TrainingBuilding"/>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Mongols"/>
+        <NamedIndividual IRI="#Mangudai"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#belongsTo"/>
-        <NamedIndividual IRI="#TownCenter"/>
-        <NamedIndividual IRI="#UpgradingBuilding"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#OrganGun"/>
+        <NamedIndividual IRI="#SiegeType"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#OrganGun"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#OrganGun"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Persians"/>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Persians"/>
+        <NamedIndividual IRI="#WarElephant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#PlumedArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#PlumedArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#PlumedArcher"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Portuguese"/>
+        <NamedIndividual IRI="#Caravel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Portuguese"/>
+        <NamedIndividual IRI="#EliteCaravel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Portuguese"/>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Portuguese"/>
+        <NamedIndividual IRI="#OrganGun"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#RattanArcher"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#RattanArcher"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#RattanArcher"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Samurai"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Samurai"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Samurai"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Saracens"/>
+        <NamedIndividual IRI="#EliteMameluke"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Saracens"/>
+        <NamedIndividual IRI="#Mameluke"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ShotelWarrior"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ShotelWarrior"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ShotelWarrior"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Slavs"/>
+        <NamedIndividual IRI="#Boyar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Slavs"/>
+        <NamedIndividual IRI="#EliteBoyar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Slinger"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Slinger"/>
+        <NamedIndividual IRI="#ArcheryRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Slinger"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Spanish"/>
+        <NamedIndividual IRI="#Conquistador"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Spanish"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Spanish"/>
+        <NamedIndividual IRI="#Missionary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#Tarkan"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Tarkan"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#Tarkan"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Tatars"/>
+        <NamedIndividual IRI="#EliteKeshik"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Tatars"/>
+        <NamedIndividual IRI="#FlamingCamel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Tatars"/>
+        <NamedIndividual IRI="#Keshik"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Teutons"/>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Teutons"/>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Turks"/>
+        <NamedIndividual IRI="#EliteJanissary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Turks"/>
+        <NamedIndividual IRI="#Janissary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#TurtleShip"/>
+        <NamedIndividual IRI="#ShipType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#TurtleShip"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#TurtleShip"/>
+        <NamedIndividual IRI="#Dock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Vietnamese"/>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Vietnamese"/>
+        <NamedIndividual IRI="#RattanArcher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Vikings"/>
+        <NamedIndividual IRI="#Berserk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Vikings"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Vikings"/>
+        <NamedIndividual IRI="#EliteLongboat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <NamedIndividual IRI="#Vikings"/>
+        <NamedIndividual IRI="#Longboat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#WarElephant"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#WarElephant"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#WarElephant"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#WarWagon"/>
+        <NamedIndividual IRI="#ArcherType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#WarWagon"/>
+        <NamedIndividual IRI="#CavalryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#WarWagon"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#WarWagon"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <NamedIndividual IRI="#WoodRaider"/>
+        <NamedIndividual IRI="#InfantryType"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#WoodRaider"/>
+        <NamedIndividual IRI="#Castle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requires"/>
+        <NamedIndividual IRI="#WoodRaider"/>
+        <NamedIndividual IRI="#CastleAge"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBonus"/>
+        <ObjectProperty IRI="#has"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBuilding"/>
         <ObjectProperty IRI="#has"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <ObjectProperty IRI="#hasUnit"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasUnit"/>
@@ -836,62 +3516,67 @@
         <ObjectProperty IRI="#hasUpgrade"/>
         <ObjectProperty IRI="#has"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isStrongAgainst"/>
-        <ObjectProperty IRI="#isAgainst"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isWeakAgainst"/>
-        <ObjectProperty IRI="#isAgainst"/>
-    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#availableSince"/>
+        <ObjectProperty IRI="#affects"/>
+        <Class IRI="#Upgrade"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBonus"/>
+        <Class IRI="#Civilization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBuilding"/>
+        <Class IRI="#Civilization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <Class IRI="#Civilization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUnit"/>
+        <Class IRI="#Civilization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUpgrade"/>
+        <Class IRI="#Civilization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <Class IRI="#Unit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isUpgradeOf"/>
+        <Class IRI="#Unit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requires"/>
         <ObjectUnionOf>
             <Class IRI="#Building"/>
             <Class IRI="#Unit"/>
             <Class IRI="#Upgrade"/>
         </ObjectUnionOf>
     </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#belongsTo"/>
-        <ObjectUnionOf>
-            <Class IRI="#Building"/>
-            <Class IRI="#Unit"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#effects"/>
-        <Class IRI="#Upgrade"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#has"/>
-        <Class IRI="#Civilization"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isAgainst"/>
-        <ObjectUnionOf>
-            <Class IRI="#Building"/>
-            <Class IRI="#Unit"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#availableSince"/>
-        <Class IRI="#Age"/>
+        <ObjectProperty IRI="#affects"/>
+        <ObjectUnionOf>
+            <Class IRI="#Building"/>
+            <Class IRI="#Unit"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#belongsTo"/>
-        <Class IRI="#Category"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#effects"/>
-        <ObjectUnionOf>
-            <Class IRI="#Building"/>
-            <Class IRI="#Unit"/>
-        </ObjectUnionOf>
+        <ObjectProperty IRI="#hasBonus"/>
+        <Class IRI="#Bonus"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasBuilding"/>
         <Class IRI="#Building"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUniqueUnit"/>
+        <Class IRI="#UniqueUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasUnit"/>
@@ -902,74 +3587,20 @@
         <Class IRI="#Upgrade"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isAgainst"/>
-        <Class IRI="#UnitCategory"/>
+        <ObjectProperty IRI="#isUnitTypeOf"/>
+        <Class IRI="#UnitType"/>
     </ObjectPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Arambai</IRI>
-        <Literal xml:lang="en">Arambai</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Bulgarians</IRI>
-        <Literal xml:lang="en">Bulgarians</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Burmese</IRI>
-        <Literal xml:lang="en">Burmese</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Castle</IRI>
-        <Literal xml:lang="en">Castle</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#CastleAge</IRI>
-        <Literal xml:lang="en">Castle Age</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#DarkAge</IRI>
-        <Literal xml:lang="en">Dark Age</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#EliteArambai</IRI>
-        <Literal xml:lang="en">Elite Arambai</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#EliteKonnik</IRI>
-        <Literal xml:lang="en">Elite Konnik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#FeudalAge</IRI>
-        <Literal xml:lang="en">Feudal Age</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ImperialAge</IRI>
-        <Literal xml:lang="en">Imperial Age</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Konnik</IRI>
-        <Literal xml:lang="en">Konnik</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#TownCenter</IRI>
-        <Literal xml:lang="en">Town Center</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Villager</IRI>
-        <Literal xml:lang="en">Villager</Literal>
-    </AnnotationAssertion>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isUpgradeOf"/>
+        <Class IRI="#Unit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requires"/>
+        <ObjectUnionOf>
+            <Class IRI="#Age"/>
+            <Class IRI="#Building"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
 </Ontology>
 
 
