@@ -57,7 +57,6 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#hasUniqueUnit
 :hasUniqueUnit rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :hasUnit ;
-               rdf:type owl:FunctionalProperty ;
                rdfs:domain :Civilization .
 
 
@@ -77,6 +76,12 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#isStrongAgainst
 :isStrongAgainst rdf:type owl:ObjectProperty .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#isUnitTypeOf
+:isUnitTypeOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :Unit ;
+              rdfs:range :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#isUpgradeOf
@@ -129,6 +134,14 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ArcherUnit
 :ArcherUnit rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :ArcherUnit
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isUnitTypeOf ;
+                                                         owl:hasValue :ArcherType
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
             rdfs:subClassOf :Unit .
 
 
@@ -152,6 +165,14 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryUnit
 :CavalryUnit rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :CavalryUnit
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :isUnitTypeOf ;
+                                                          owl:hasValue :CavalryType
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
              rdfs:subClassOf :Unit .
 
 
@@ -176,11 +197,27 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#GunpowderUnit
 :GunpowderUnit rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :GunpowderUnit
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isUnitTypeOf ;
+                                                            owl:hasValue :GunpowderType
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :Unit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HealerUnit
 :HealerUnit rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :HealerUnit
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isUnitTypeOf ;
+                                                         owl:hasValue :HealerType
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
             rdfs:subClassOf :Unit .
 
 
@@ -191,16 +228,40 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#InfantryUnit
 :InfantryUnit rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :InfantryUnit
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isUnitTypeOf ;
+                                                           owl:hasValue :InfantryType
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
               rdfs:subClassOf :Unit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#MonkUnit
 :MonkUnit rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :MonkUnit
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isUnitTypeOf ;
+                                                       owl:hasValue :MonkType
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
           rdfs:subClassOf :Unit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#PetardUnit
 :PetardUnit rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :PetardUnit
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isUnitTypeOf ;
+                                                         owl:hasValue :PetardType
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
             rdfs:subClassOf :Unit .
 
 
@@ -211,11 +272,27 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ShipUnit
 :ShipUnit rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :ShipUnit
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isUnitTypeOf ;
+                                                       owl:hasValue :ShipType
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
           rdfs:subClassOf :Unit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeUnit
 :SiegeUnit rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :SiegeUnit
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isUnitTypeOf ;
+                                                        owl:hasValue :SiegeType
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
            rdfs:subClassOf :Unit .
 
 
@@ -229,8 +306,17 @@
            rdfs:subClassOf :Bonus .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#Type
+:Type rdf:type owl:Class .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Unit
 :Unit rdf:type owl:Class .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#UnitType
+:UnitType rdf:type owl:Class ;
+          rdfs:subClassOf :Type .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Upgrade
@@ -258,6 +344,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Archer
 :Archer rdf:type owl:NamedIndividual ,
                  :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#ArcherType
+:ArcherType rdf:type owl:NamedIndividual ,
+                     :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ArcheryRange
@@ -424,6 +515,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryArcher
 :CavalryArcher rdf:type owl:NamedIndividual ,
                         :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryType
+:CavalryType rdf:type owl:NamedIndividual ,
+                      :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Celts
@@ -987,6 +1083,11 @@
                      :Building .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#GunpowderType
+:GunpowderType rdf:type owl:NamedIndividual ,
+                        :UnitType .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Halberdier
 :Halberdier rdf:type owl:NamedIndividual ,
                      :Unit .
@@ -995,6 +1096,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HandCannoneer
 :HandCannoneer rdf:type owl:NamedIndividual ,
                         :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#HealerType
+:HealerType rdf:type owl:NamedIndividual ,
+                     :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCamelRider
@@ -1079,6 +1185,11 @@
          :hasUniqueUnit :ElephantArcher ,
                         :EliteElephantArcher ,
                         :ImperialCamelRider .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#InfantryType
+:InfantryType rdf:type owl:NamedIndividual ,
+                       :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Italians
@@ -1341,6 +1452,11 @@
                :Unit .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#MonkType
+:MonkType rdf:type owl:NamedIndividual ,
+                   :UnitType .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Onager
 :Onager rdf:type owl:NamedIndividual ,
                  :Unit .
@@ -1384,6 +1500,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Petard
 :Petard rdf:type owl:NamedIndividual ,
                  :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#PetardType
+:PetardType rdf:type owl:NamedIndividual ,
+                     :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Pikeman
@@ -1441,6 +1562,11 @@
                        :Unit .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#ShipType
+:ShipType rdf:type owl:NamedIndividual ,
+                   :UnitType .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ShotelWarrior
 :ShotelWarrior rdf:type owl:NamedIndividual ,
                         :InfantryUnit ;
@@ -1462,6 +1588,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeTower
 :SiegeTower rdf:type owl:NamedIndividual ,
                      :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeType
+:SiegeType rdf:type owl:NamedIndividual ,
+                    :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeWorkshop
