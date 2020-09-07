@@ -7,7 +7,7 @@
 @base <https://github.com/akramer-zibra/aoe2de-ontology> .
 
 <https://github.com/akramer-zibra/aoe2de-ontology> rdf:type owl:Ontology ;
-                                                    rdfs:comment "Diese Ontology beschreibt Zusammenhänge der Entitäten on Age of Empires 2 Defenitive Edition"@de .
+                                                    rdfs:comment "Diese Ontology beschreibt Wissen über Zusammenhänge und Eigenschaften von Entitäten des Spiels Age of Empires 2 Definitive Edition"@de .
 
 #################################################################
 #    Object Properties
