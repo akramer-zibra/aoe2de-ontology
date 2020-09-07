@@ -233,10 +233,6 @@
 :Unit rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#UnitType
-:UnitType rdf:type owl:Class .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Upgrade
 :Upgrade rdf:type owl:Class .
 
@@ -262,11 +258,6 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Archer
 :Archer rdf:type owl:NamedIndividual ,
                  :Unit .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#ArcherType
-:ArcherType rdf:type owl:NamedIndividual ,
-                     :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ArcheryRange
@@ -433,11 +424,6 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryArcher
 :CavalryArcher rdf:type owl:NamedIndividual ,
                         :Unit .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryType
-:CavalryType rdf:type owl:NamedIndividual ,
-                      :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Celts
@@ -1001,11 +987,6 @@
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#GunpowderType
-:GunpowderType rdf:type owl:NamedIndividual ,
-                        :UnitType .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Halberdier
 :Halberdier rdf:type owl:NamedIndividual ,
                      :Unit .
@@ -1014,11 +995,6 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HandCannoneer
 :HandCannoneer rdf:type owl:NamedIndividual ,
                         :Unit .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#HealerType
-:HealerType rdf:type owl:NamedIndividual ,
-                     :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCamelRider
@@ -1103,11 +1079,6 @@
          :hasUniqueUnit :ElephantArcher ,
                         :EliteElephantArcher ,
                         :ImperialCamelRider .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#InfantryType
-:InfantryType rdf:type owl:NamedIndividual ,
-                       :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Italians
@@ -1370,11 +1341,6 @@
                :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#MonkType
-:MonkType rdf:type owl:NamedIndividual ,
-                   :UnitType .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Onager
 :Onager rdf:type owl:NamedIndividual ,
                  :Unit .
@@ -1418,11 +1384,6 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Petard
 :Petard rdf:type owl:NamedIndividual ,
                  :Unit .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#PetardType
-:PetardType rdf:type owl:NamedIndividual ,
-                     :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Pikeman
@@ -1480,11 +1441,6 @@
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#ShipType
-:ShipType rdf:type owl:NamedIndividual ,
-                   :UnitType .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ShotelWarrior
 :ShotelWarrior rdf:type owl:NamedIndividual ,
                         :InfantryUnit ;
@@ -1506,11 +1462,6 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeTower
 :SiegeTower rdf:type owl:NamedIndividual ,
                      :Unit .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeType
-:SiegeType rdf:type owl:NamedIndividual ,
-                    :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeWorkshop
