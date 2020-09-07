@@ -23,6 +23,9 @@
         <Class IRI="#Age"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ArcherUnit"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ArmorUpgrade"/>
     </Declaration>
     <Declaration>
@@ -33,6 +36,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Building"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CavalryUnit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Civilization"/>
@@ -47,10 +53,31 @@
         <Class IRI="#EliteUpgrade"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GunpowderUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealerUnit"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HitpointsUpgrade"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#InfantryUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonkUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PetardUnit"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RangeUpgrade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShipUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SiegeUnit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SpeedUpgrade"/>
@@ -105,6 +132,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#requires"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isUniqueUnit"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Arambai"/>
@@ -780,12 +810,20 @@
         <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ArcherUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ArmorUpgrade"/>
         <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AttackUpgrade"/>
         <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CavalryUnit"/>
+        <Class IRI="#Unit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ConversionDefenseUpgrade"/>
@@ -800,12 +838,40 @@
         <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#GunpowderUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealerUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#HitpointsUpgrade"/>
         <Class IRI="#Upgrade"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#InfantryUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonkUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PetardUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RangeUpgrade"/>
         <Class IRI="#Upgrade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShipUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SiegeUnit"/>
+        <Class IRI="#Unit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpeedUpgrade"/>
@@ -3496,6 +3562,431 @@
         <NamedIndividual IRI="#WoodRaider"/>
         <NamedIndividual IRI="#CastleAge"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Arambai"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#BallistaElephant"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Berserk"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Boyar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#CamelArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Caravel"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Cataphract"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ChuKoNu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Condottiero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Conquistador"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ElephantArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteArambai"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteBallistaElephant"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteBerserk"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteBoyar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteCamelArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteCaravel"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteCataphract"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteChuKoNu"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteConquistador"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteElephantArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteGbeto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteGenitour"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteGenoeseCrossbowman"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteHuskarl"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteJaguarWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteJanissary"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteKamayuk"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteKarambitWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteKeshik"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteKipchak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteKonnik"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteLeitis"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteLongboat"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteLongbowman"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteMagyarHuszar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteMameluke"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteMangudai"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteOrganGun"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ElitePlumedArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteRattanArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteSamurai"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteShotelWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteTarkan"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteTeutonicKnight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteThrowingAxeman"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteTurtleShip"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteWarElephant"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteWarWagon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#EliteWoodRaider"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#FlamingCamel"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Gbeto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Genitour"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#GenoeseCrossbowman"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Huskarl"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ImperialCamelRider"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ImperialSkirmisher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#JaguarWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Janissary"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Kamayuk"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#KarambitWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Keshik"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Kipchak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Konnik"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Leitis"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Longboat"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Longbowman"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#MagyarHuszar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Mameluke"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Mangudai"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Missionary"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#OrganGun"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#PlumedArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#RattanArcher"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Samurai"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ShotelWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Slinger"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#Tarkan"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#TeutonicKnight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#ThrowingAxeman"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#TurtleShip"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#WarElephant"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#WarWagon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#WoodRaider"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <NamedIndividual IRI="#XolotlWarrior"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasBonus"/>
         <ObjectProperty IRI="#has"/>
@@ -3601,6 +4092,14 @@
             <Class IRI="#Building"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <Class IRI="#Unit"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#isUniqueUnit"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
 </Ontology>
 
 
