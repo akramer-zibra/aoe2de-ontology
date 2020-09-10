@@ -1,4 +1,4 @@
-@prefix : <https://github.com/akramer-zibra/aoe2de-ontology> .
+@prefix : <https://github.com/akramer-zibra/aoe2de-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -13,7 +13,7 @@
 #    Object Properties
 #################################################################
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyaffects
+###  https://github.com/akramer-zibra/aoe2de-ontology#affects
 :affects rdf:type owl:ObjectProperty ;
          rdfs:domain :Upgrade ;
          rdfs:range [ rdf:type owl:Class ;
@@ -23,7 +23,7 @@
                     ] .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyavailableFor
+###  https://github.com/akramer-zibra/aoe2de-ontology#availableFor
 :availableFor rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain [ rdf:type owl:Class ;
@@ -36,65 +36,65 @@
               rdfs:range :Civilization .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyhas
+###  https://github.com/akramer-zibra/aoe2de-ontology#has
 :has rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyhasBonus
+###  https://github.com/akramer-zibra/aoe2de-ontology#hasBonus
 :hasBonus rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :has ;
           rdfs:domain :Civilization ;
           rdfs:range :Bonus .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyhasBuilding
+###  https://github.com/akramer-zibra/aoe2de-ontology#hasBuilding
 :hasBuilding rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :has ;
              rdfs:domain :Civilization ;
              rdfs:range :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyhasUniqueUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#hasUniqueUnit
 :hasUniqueUnit rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :hasUnit ;
                rdfs:domain :Civilization .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyhasUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#hasUnit
 :hasUnit rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf :has ;
          rdfs:domain :Civilization ;
          rdfs:range :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyhasUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#hasUpgrade
 :hasUpgrade rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :has ;
             rdfs:domain :Civilization ;
             rdfs:range :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyisStrongAgainst
+###  https://github.com/akramer-zibra/aoe2de-ontology#isStrongAgainst
 :isStrongAgainst rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyisUnitTypeOf
+###  https://github.com/akramer-zibra/aoe2de-ontology#isUnitTypeOf
 :isUnitTypeOf rdf:type owl:ObjectProperty ;
               rdfs:domain :Unit ;
               rdfs:range :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyisUpgradeOf
+###  https://github.com/akramer-zibra/aoe2de-ontology#isUpgradeOf
 :isUpgradeOf rdf:type owl:ObjectProperty ;
              rdfs:domain :Unit ;
              rdfs:range :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyisWeakAgainst
+###  https://github.com/akramer-zibra/aoe2de-ontology#isWeakAgainst
 :isWeakAgainst rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyrequires
+###  https://github.com/akramer-zibra/aoe2de-ontology#requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :Building
@@ -113,7 +113,7 @@
 #    Data properties
 #################################################################
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyisUniqueUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#isUniqueUnit
 :isUniqueUnit rdf:type owl:DatatypeProperty ;
               rdfs:domain :Unit ;
               rdfs:range xsd:boolean .
@@ -123,16 +123,16 @@
 #    Classes
 #################################################################
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyAccuracyUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#AccuracyUpgrade
 :AccuracyUpgrade rdf:type owl:Class ;
                  rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyAge
+###  https://github.com/akramer-zibra/aoe2de-ontology#Age
 :Age rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArcherUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#ArcherUnit
 :ArcherUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :ArcherUnit
                                                        [ rdf:type owl:Restriction ;
@@ -145,25 +145,25 @@
             rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArmorUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#ArmorUpgrade
 :ArmorUpgrade rdf:type owl:Class ;
               rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyAttackUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#AttackUpgrade
 :AttackUpgrade rdf:type owl:Class ;
                rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBonus
+###  https://github.com/akramer-zibra/aoe2de-ontology#Bonus
 :Bonus rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBuilding
+###  https://github.com/akramer-zibra/aoe2de-ontology#Building
 :Building rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCavalryUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryUnit
 :CavalryUnit rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :CavalryUnit
                                                         [ rdf:type owl:Restriction ;
@@ -176,26 +176,26 @@
              rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCivilization
+###  https://github.com/akramer-zibra/aoe2de-ontology#Civilization
 :Civilization rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyConversionDefenseUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#ConversionDefenseUpgrade
 :ConversionDefenseUpgrade rdf:type owl:Class ;
                           rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCreationSpeedUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#CreationSpeedUpgrade
 :CreationSpeedUpgrade rdf:type owl:Class ;
                       rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteUpgrade
 :EliteUpgrade rdf:type owl:Class ;
               rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGunpowderUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#GunpowderUnit
 :GunpowderUnit rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :GunpowderUnit
                                                           [ rdf:type owl:Restriction ;
@@ -208,7 +208,7 @@
                rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHealerUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#HealerUnit
 :HealerUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :HealerUnit
                                                        [ rdf:type owl:Restriction ;
@@ -221,12 +221,12 @@
             rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHitpointsUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#HitpointsUpgrade
 :HitpointsUpgrade rdf:type owl:Class ;
                   rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyInfantryUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#InfantryUnit
 :InfantryUnit rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( :InfantryUnit
                                                          [ rdf:type owl:Restriction ;
@@ -239,7 +239,7 @@
               rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMonkUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#MonkUnit
 :MonkUnit rdf:type owl:Class ;
           owl:equivalentClass [ owl:intersectionOf ( :MonkUnit
                                                      [ rdf:type owl:Restriction ;
@@ -252,7 +252,7 @@
           rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPetardUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#PetardUnit
 :PetardUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :PetardUnit
                                                        [ rdf:type owl:Restriction ;
@@ -265,12 +265,12 @@
             rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyRangeUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#RangeUpgrade
 :RangeUpgrade rdf:type owl:Class ;
               rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyShipUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#ShipUnit
 :ShipUnit rdf:type owl:Class ;
           owl:equivalentClass [ owl:intersectionOf ( :ShipUnit
                                                      [ rdf:type owl:Restriction ;
@@ -283,7 +283,7 @@
           rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySiegeUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeUnit
 :SiegeUnit rdf:type owl:Class ;
            owl:equivalentClass [ owl:intersectionOf ( :SiegeUnit
                                                       [ rdf:type owl:Restriction ;
@@ -296,30 +296,30 @@
            rdfs:subClassOf :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySpeedUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#SpeedUpgrade
 :SpeedUpgrade rdf:type owl:Class ;
               rdfs:subClassOf :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTeamBonus
+###  https://github.com/akramer-zibra/aoe2de-ontology#TeamBonus
 :TeamBonus rdf:type owl:Class ;
            rdfs:subClassOf :Bonus .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyType
+###  https://github.com/akramer-zibra/aoe2de-ontology#Type
 :Type rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyUnit
+###  https://github.com/akramer-zibra/aoe2de-ontology#Unit
 :Unit rdf:type owl:Class .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyUnitType
+###  https://github.com/akramer-zibra/aoe2de-ontology#UnitType
 :UnitType rdf:type owl:Class ;
           rdfs:subClassOf :Type .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyUpgrade
+###  https://github.com/akramer-zibra/aoe2de-ontology#Upgrade
 :Upgrade rdf:type owl:Class .
 
 
@@ -327,7 +327,7 @@
 #    Individuals
 #################################################################
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArambai
+###  https://github.com/akramer-zibra/aoe2de-ontology#Arambai
 :Arambai rdf:type owl:NamedIndividual ,
                   :ArcherUnit ,
                   :CavalryUnit ;
@@ -336,34 +336,34 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArbalester
+###  https://github.com/akramer-zibra/aoe2de-ontology#Arbalester
 :Arbalester rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#Archer
 :Archer rdf:type owl:NamedIndividual ,
                  :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArcherType
+###  https://github.com/akramer-zibra/aoe2de-ontology#ArcherType
 :ArcherType rdf:type owl:NamedIndividual ,
                      :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyArcheryRange
+###  https://github.com/akramer-zibra/aoe2de-ontology#ArcheryRange
 :ArcheryRange rdf:type owl:NamedIndividual ,
                        :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyAztecs
+###  https://github.com/akramer-zibra/aoe2de-ontology#Aztecs
 :Aztecs rdf:type owl:NamedIndividual ,
                  :Civilization ;
         :hasUniqueUnit :EliteJaguarWarrior ,
                        :JaguarWarrior .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBallistaElephant
+###  https://github.com/akramer-zibra/aoe2de-ontology#BallistaElephant
 :BallistaElephant rdf:type owl:NamedIndividual ,
                            :CavalryUnit ,
                            :SiegeUnit ;
@@ -372,22 +372,22 @@
                   :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBarracks
+###  https://github.com/akramer-zibra/aoe2de-ontology#Barracks
 :Barracks rdf:type owl:NamedIndividual ,
                    :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBatteringRam
+###  https://github.com/akramer-zibra/aoe2de-ontology#BatteringRam
 :BatteringRam rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBattleElephant
+###  https://github.com/akramer-zibra/aoe2de-ontology#BattleElephant
 :BattleElephant rdf:type owl:NamedIndividual ,
                          :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBerbers
+###  https://github.com/akramer-zibra/aoe2de-ontology#Berbers
 :Berbers rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :CamelArcher ,
@@ -396,7 +396,7 @@
                         :Genitour .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBerserk
+###  https://github.com/akramer-zibra/aoe2de-ontology#Berserk
 :Berserk rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
          :requires :Castle ,
@@ -404,22 +404,22 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBlacksmith
+###  https://github.com/akramer-zibra/aoe2de-ontology#Blacksmith
 :Blacksmith rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBombardCannon
+###  https://github.com/akramer-zibra/aoe2de-ontology#BombardCannon
 :BombardCannon rdf:type owl:NamedIndividual ,
                         :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBombardTower
+###  https://github.com/akramer-zibra/aoe2de-ontology#BombardTower
 :BombardTower rdf:type owl:NamedIndividual ,
                        :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBoyar
+###  https://github.com/akramer-zibra/aoe2de-ontology#Boyar
 :Boyar rdf:type owl:NamedIndividual ,
                 :CavalryUnit ;
        :requires :Castle ,
@@ -427,35 +427,35 @@
        :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBritons
+###  https://github.com/akramer-zibra/aoe2de-ontology#Britons
 :Britons rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :EliteLongbowman ,
                         :Longbowman .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBulgarians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Bulgarians
 :Bulgarians rdf:type owl:NamedIndividual ,
                      :Civilization ;
             :hasUniqueUnit :EliteKonnik ,
                            :Konnik .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyBurmese
+###  https://github.com/akramer-zibra/aoe2de-ontology#Burmese
 :Burmese rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :Arambai ,
                         :EliteArambai .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyByzantines
+###  https://github.com/akramer-zibra/aoe2de-ontology#Byzantines
 :Byzantines rdf:type owl:NamedIndividual ,
                      :Civilization ;
             :hasUniqueUnit :Cataphract ,
                            :EliteCataphract .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCamelArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#CamelArcher
 :CamelArcher rdf:type owl:NamedIndividual ,
                       :ArcherUnit ,
                       :CavalryUnit ;
@@ -464,22 +464,22 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCamelRider
+###  https://github.com/akramer-zibra/aoe2de-ontology#CamelRider
 :CamelRider rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCannonGalley
+###  https://github.com/akramer-zibra/aoe2de-ontology#CannonGalley
 :CannonGalley rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCappedRam
+###  https://github.com/akramer-zibra/aoe2de-ontology#CappedRam
 :CappedRam rdf:type owl:NamedIndividual ,
                     :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCaravel
+###  https://github.com/akramer-zibra/aoe2de-ontology#Caravel
 :Caravel rdf:type owl:NamedIndividual ,
                   :ShipUnit ;
          :requires :CastleAge ,
@@ -487,19 +487,19 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCastle
+###  https://github.com/akramer-zibra/aoe2de-ontology#Castle
 :Castle rdf:type owl:NamedIndividual ,
                  :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCastleAge
+###  https://github.com/akramer-zibra/aoe2de-ontology#CastleAge
 :CastleAge rdf:type owl:NamedIndividual ,
                     :Age ;
            :requires :Castle ,
                      :ImperialAge .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCataphract
+###  https://github.com/akramer-zibra/aoe2de-ontology#Cataphract
 :Cataphract rdf:type owl:NamedIndividual ,
                      :CavalryUnit ;
             :requires :Castle ,
@@ -507,41 +507,41 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCavalier
+###  https://github.com/akramer-zibra/aoe2de-ontology#Cavalier
 :Cavalier rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCavalryArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryArcher
 :CavalryArcher rdf:type owl:NamedIndividual ,
                         :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCavalryType
+###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryType
 :CavalryType rdf:type owl:NamedIndividual ,
                       :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCelts
+###  https://github.com/akramer-zibra/aoe2de-ontology#Celts
 :Celts rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :EliteWoodRaider ,
                       :WoodRaider .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyChampion
+###  https://github.com/akramer-zibra/aoe2de-ontology#Champion
 :Champion rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyChinese
+###  https://github.com/akramer-zibra/aoe2de-ontology#Chinese
 :Chinese rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :ChuKoNu ,
                         :EliteChuKoNu .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyChuKoNu
+###  https://github.com/akramer-zibra/aoe2de-ontology#ChuKoNu
 :ChuKoNu rdf:type owl:NamedIndividual ,
                   :ArcherUnit ;
          :requires :Castle ,
@@ -549,7 +549,7 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCondottiero
+###  https://github.com/akramer-zibra/aoe2de-ontology#Condottiero
 :Condottiero rdf:type owl:NamedIndividual ,
                       :InfantryUnit ;
              :requires :Barracks ,
@@ -557,7 +557,7 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyConquistador
+###  https://github.com/akramer-zibra/aoe2de-ontology#Conquistador
 :Conquistador rdf:type owl:NamedIndividual ,
                        :CavalryUnit ,
                        :GunpowderUnit ;
@@ -566,49 +566,49 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCrossbowman
+###  https://github.com/akramer-zibra/aoe2de-ontology#Crossbowman
 :Crossbowman rdf:type owl:NamedIndividual ,
                       :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyCumans
+###  https://github.com/akramer-zibra/aoe2de-ontology#Cumans
 :Cumans rdf:type owl:NamedIndividual ,
                  :Civilization ;
         :hasUniqueUnit :EliteKipchak ,
                        :Kipchak .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyDarkAge
+###  https://github.com/akramer-zibra/aoe2de-ontology#DarkAge
 :DarkAge rdf:type owl:NamedIndividual ,
                   :Age .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyDemolitionRaft
+###  https://github.com/akramer-zibra/aoe2de-ontology#DemolitionRaft
 :DemolitionRaft rdf:type owl:NamedIndividual ,
                          :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyDemolitionShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#DemolitionShip
 :DemolitionShip rdf:type owl:NamedIndividual ,
                          :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyDock
+###  https://github.com/akramer-zibra/aoe2de-ontology#Dock
 :Dock rdf:type owl:NamedIndividual ,
                :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEagleScout
+###  https://github.com/akramer-zibra/aoe2de-ontology#EagleScout
 :EagleScout rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEagleWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#EagleWarrior
 :EagleWarrior rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyElephantArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#ElephantArcher
 :ElephantArcher rdf:type owl:NamedIndividual ,
                          :ArcherUnit ,
                          :CavalryUnit ;
@@ -617,7 +617,7 @@
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteArambai
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteArambai
 :EliteArambai rdf:type owl:NamedIndividual ,
                        :ArcherUnit ,
                        :CavalryUnit ;
@@ -626,7 +626,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteBallistaElephant
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBallistaElephant
 :EliteBallistaElephant rdf:type owl:NamedIndividual ,
                                 :CavalryUnit ,
                                 :SiegeUnit ;
@@ -635,12 +635,12 @@
                        :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteBattleElephant
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBattleElephant
 :EliteBattleElephant rdf:type owl:NamedIndividual ,
                               :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteBerserk
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBerserk
 :EliteBerserk rdf:type owl:NamedIndividual ,
                        :InfantryUnit ;
               :requires :Castle ,
@@ -648,7 +648,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteBoyar
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBoyar
 :EliteBoyar rdf:type owl:NamedIndividual ,
                      :CavalryUnit ;
             :requires :Castle ,
@@ -656,7 +656,7 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteCamelArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCamelArcher
 :EliteCamelArcher rdf:type owl:NamedIndividual ,
                            :ArcherUnit ,
                            :CavalryUnit ;
@@ -665,12 +665,12 @@
                   :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteCannonGalley
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCannonGalley
 :EliteCannonGalley rdf:type owl:NamedIndividual ,
                             :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteCaravel
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCaravel
 :EliteCaravel rdf:type owl:NamedIndividual ,
                        :ShipUnit ;
               :requires :Dock ,
@@ -678,7 +678,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteCataphract
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCataphract
 :EliteCataphract rdf:type owl:NamedIndividual ,
                           :CavalryUnit ;
                  :requires :Castle ,
@@ -686,7 +686,7 @@
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteChuKoNu
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteChuKoNu
 :EliteChuKoNu rdf:type owl:NamedIndividual ,
                        :ArcherUnit ;
               :requires :Castle ,
@@ -694,7 +694,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteConquistador
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteConquistador
 :EliteConquistador rdf:type owl:NamedIndividual ,
                             :CavalryUnit ,
                             :GunpowderUnit ;
@@ -703,12 +703,12 @@
                    :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteEagleWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteEagleWarrior
 :EliteEagleWarrior rdf:type owl:NamedIndividual ,
                             :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteElephantArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteElephantArcher
 :EliteElephantArcher rdf:type owl:NamedIndividual ,
                               :ArcherUnit ,
                               :CavalryUnit ;
@@ -717,7 +717,7 @@
                      :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteGbeto
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteGbeto
 :EliteGbeto rdf:type owl:NamedIndividual ,
                      :InfantryUnit ;
             :requires :Castle ,
@@ -725,7 +725,7 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteGenitour
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteGenitour
 :EliteGenitour rdf:type owl:NamedIndividual ,
                         :ArcherUnit ,
                         :CavalryUnit ;
@@ -734,7 +734,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteGenoeseCrossbowman
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteGenoeseCrossbowman
 :EliteGenoeseCrossbowman rdf:type owl:NamedIndividual ,
                                   :ArcherUnit ;
                          :requires :Castle ,
@@ -742,7 +742,7 @@
                          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteHuskarl
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteHuskarl
 :EliteHuskarl rdf:type owl:NamedIndividual ,
                        :InfantryUnit ;
               :requires :Castle ,
@@ -750,7 +750,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteJaguarWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteJaguarWarrior
 :EliteJaguarWarrior rdf:type owl:NamedIndividual ,
                              :InfantryUnit ;
                     :requires :Castle ,
@@ -758,7 +758,7 @@
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteJanissary
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteJanissary
 :EliteJanissary rdf:type owl:NamedIndividual ,
                          :GunpowderUnit ;
                 :requires :Castle ,
@@ -766,7 +766,7 @@
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteKamayuk
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteKamayuk
 :EliteKamayuk rdf:type owl:NamedIndividual ,
                        :InfantryUnit ;
               :requires :Castle ,
@@ -774,7 +774,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteKarambitWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteKarambitWarrior
 :EliteKarambitWarrior rdf:type owl:NamedIndividual ,
                                :InfantryUnit ;
                       :requires :Castle ,
@@ -782,7 +782,7 @@
                       :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteKeshik
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteKeshik
 :EliteKeshik rdf:type owl:NamedIndividual ,
                       :CavalryUnit ;
              :requires :Castle ,
@@ -790,7 +790,7 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteKipchak
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteKipchak
 :EliteKipchak rdf:type owl:NamedIndividual ,
                        :ArcherUnit ,
                        :CavalryUnit ;
@@ -799,7 +799,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteKonnik
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteKonnik
 :EliteKonnik rdf:type owl:NamedIndividual ,
                       :CavalryUnit ;
              :requires :Castle ,
@@ -808,7 +808,7 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteLeitis
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteLeitis
 :EliteLeitis rdf:type owl:NamedIndividual ,
                       :CavalryUnit ;
              :requires :Castle ,
@@ -816,7 +816,7 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteLongboat
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteLongboat
 :EliteLongboat rdf:type owl:NamedIndividual ,
                         :ShipUnit ;
                :requires :Dock ,
@@ -824,7 +824,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteLongbowman
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteLongbowman
 :EliteLongbowman rdf:type owl:NamedIndividual ,
                           :ArcherUnit ;
                  :requires :Castle ,
@@ -832,7 +832,7 @@
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteMagyarHuszar
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteMagyarHuszar
 :EliteMagyarHuszar rdf:type owl:NamedIndividual ,
                             :CavalryUnit ;
                    :requires :Castle ,
@@ -840,7 +840,7 @@
                    :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteMameluke
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteMameluke
 :EliteMameluke rdf:type owl:NamedIndividual ,
                         :CavalryUnit ;
                :requires :Castle ,
@@ -848,7 +848,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteMangudai
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteMangudai
 :EliteMangudai rdf:type owl:NamedIndividual ,
                         :ArcherUnit ,
                         :CavalryUnit ;
@@ -857,7 +857,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteOrganGun
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteOrganGun
 :EliteOrganGun rdf:type owl:NamedIndividual ,
                         :SiegeUnit ;
                :requires :Castle ,
@@ -865,7 +865,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyElitePlumedArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#ElitePlumedArcher
 :ElitePlumedArcher rdf:type owl:NamedIndividual ,
                             :ArcherUnit ;
                    :requires :Castle ,
@@ -873,7 +873,7 @@
                    :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteRattanArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteRattanArcher
 :EliteRattanArcher rdf:type owl:NamedIndividual ,
                             :ArcherUnit ;
                    :requires :Castle ,
@@ -881,7 +881,7 @@
                    :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteSamurai
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSamurai
 :EliteSamurai rdf:type owl:NamedIndividual ,
                        :InfantryUnit ;
               :requires :Castle ,
@@ -889,7 +889,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteShotelWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteShotelWarrior
 :EliteShotelWarrior rdf:type owl:NamedIndividual ,
                              :InfantryUnit ;
                     :requires :Castle ,
@@ -897,17 +897,17 @@
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteSkirmisher
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSkirmisher
 :EliteSkirmisher rdf:type owl:NamedIndividual ,
                           :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteSteppeLancer
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSteppeLancer
 :EliteSteppeLancer rdf:type owl:NamedIndividual ,
                             :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteTarkan
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteTarkan
 :EliteTarkan rdf:type owl:NamedIndividual ,
                       :CavalryUnit ;
              :requires :Castle ,
@@ -915,7 +915,7 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteTeutonicKnight
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteTeutonicKnight
 :EliteTeutonicKnight rdf:type owl:NamedIndividual ,
                               :InfantryUnit ;
                      :requires :Castle ,
@@ -923,7 +923,7 @@
                      :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteThrowingAxeman
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteThrowingAxeman
 :EliteThrowingAxeman rdf:type owl:NamedIndividual ,
                               :InfantryUnit ;
                      :requires :Castle ,
@@ -931,7 +931,7 @@
                      :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteTurtleShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteTurtleShip
 :EliteTurtleShip rdf:type owl:NamedIndividual ,
                           :ShipUnit ;
                  :requires :Dock ,
@@ -939,7 +939,7 @@
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteWarElephant
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteWarElephant
 :EliteWarElephant rdf:type owl:NamedIndividual ,
                            :CavalryUnit ;
                   :requires :Castle ,
@@ -947,7 +947,7 @@
                   :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteWarWagon
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteWarWagon
 :EliteWarWagon rdf:type owl:NamedIndividual ,
                         :ArcherUnit ,
                         :CavalryUnit ;
@@ -956,7 +956,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEliteWoodRaider
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteWoodRaider
 :EliteWoodRaider rdf:type owl:NamedIndividual ,
                           :InfantryUnit ;
                  :requires :Castle ,
@@ -964,54 +964,54 @@
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyEthiopians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Ethiopians
 :Ethiopians rdf:type owl:NamedIndividual ,
                      :Civilization ;
             :hasUniqueUnit :EliteShotelWarrior ,
                            :ShotelWarrior .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFarm
+###  https://github.com/akramer-zibra/aoe2de-ontology#Farm
 :Farm rdf:type owl:NamedIndividual ,
                :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFastFireShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#FastFireShip
 :FastFireShip rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFeitoria
+###  https://github.com/akramer-zibra/aoe2de-ontology#Feitoria
 :Feitoria rdf:type owl:NamedIndividual ,
                    :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFeudalAge
+###  https://github.com/akramer-zibra/aoe2de-ontology#FeudalAge
 :FeudalAge rdf:type owl:NamedIndividual ,
                     :Age .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFireGalley
+###  https://github.com/akramer-zibra/aoe2de-ontology#FireGalley
 :FireGalley rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFireShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#FireShip
 :FireShip rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFishTrap
+###  https://github.com/akramer-zibra/aoe2de-ontology#FishTrap
 :FishTrap rdf:type owl:NamedIndividual ,
                    :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFishingShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#FishingShip
 :FishingShip rdf:type owl:NamedIndividual ,
                       :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFlamingCamel
+###  https://github.com/akramer-zibra/aoe2de-ontology#FlamingCamel
 :FlamingCamel rdf:type owl:NamedIndividual ,
                        :PetardUnit ;
               :requires :Castle ,
@@ -1019,34 +1019,34 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFortifiedWall
+###  https://github.com/akramer-zibra/aoe2de-ontology#FortifiedWall
 :FortifiedWall rdf:type owl:NamedIndividual ,
                         :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyFranks
+###  https://github.com/akramer-zibra/aoe2de-ontology#Franks
 :Franks rdf:type owl:NamedIndividual ,
                  :Civilization ;
         :hasUniqueUnit :EliteThrowingAxeman ,
                        :ThrowingAxeman .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGalleon
+###  https://github.com/akramer-zibra/aoe2de-ontology#Galleon
 :Galleon rdf:type owl:NamedIndividual ,
                   :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGalley
+###  https://github.com/akramer-zibra/aoe2de-ontology#Galley
 :Galley rdf:type owl:NamedIndividual ,
                  :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGate
+###  https://github.com/akramer-zibra/aoe2de-ontology#Gate
 :Gate rdf:type owl:NamedIndividual ,
                :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGbeto
+###  https://github.com/akramer-zibra/aoe2de-ontology#Gbeto
 :Gbeto rdf:type owl:NamedIndividual ,
                 :InfantryUnit ;
        :requires :Castle ,
@@ -1054,7 +1054,7 @@
        :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGenitour
+###  https://github.com/akramer-zibra/aoe2de-ontology#Genitour
 :Genitour rdf:type owl:NamedIndividual ,
                    :ArcherUnit ,
                    :CavalryUnit ;
@@ -1063,7 +1063,7 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGenoeseCrossbowman
+###  https://github.com/akramer-zibra/aoe2de-ontology#GenoeseCrossbowman
 :GenoeseCrossbowman rdf:type owl:NamedIndividual ,
                              :ArcherUnit ;
                     :requires :Castle ,
@@ -1071,71 +1071,71 @@
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGoths
+###  https://github.com/akramer-zibra/aoe2de-ontology#Goths
 :Goths rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :EliteHuskarl ,
                       :Huskarl .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGuardTower
+###  https://github.com/akramer-zibra/aoe2de-ontology#GuardTower
 :GuardTower rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyGunpowderType
+###  https://github.com/akramer-zibra/aoe2de-ontology#GunpowderType
 :GunpowderType rdf:type owl:NamedIndividual ,
                         :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHalberdier
+###  https://github.com/akramer-zibra/aoe2de-ontology#Halberdier
 :Halberdier rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHandCannoneer
+###  https://github.com/akramer-zibra/aoe2de-ontology#HandCannoneer
 :HandCannoneer rdf:type owl:NamedIndividual ,
                         :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHealerType
+###  https://github.com/akramer-zibra/aoe2de-ontology#HealerType
 :HealerType rdf:type owl:NamedIndividual ,
                      :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHeavyCamelRider
+###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCamelRider
 :HeavyCamelRider rdf:type owl:NamedIndividual ,
                           :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHeavyCavalryArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCavalryArcher
 :HeavyCavalryArcher rdf:type owl:NamedIndividual ,
                              :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHeavyDemolitionShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyDemolitionShip
 :HeavyDemolitionShip rdf:type owl:NamedIndividual ,
                               :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHeavyScorpion
+###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyScorpion
 :HeavyScorpion rdf:type owl:NamedIndividual ,
                         :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHouse
+###  https://github.com/akramer-zibra/aoe2de-ontology#House
 :House rdf:type owl:NamedIndividual ,
                 :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHuns
+###  https://github.com/akramer-zibra/aoe2de-ontology#Huns
 :Huns rdf:type owl:NamedIndividual ,
                :Civilization ;
       :hasUniqueUnit :EliteTarkan ,
                      :Tarkan .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHuskarl
+###  https://github.com/akramer-zibra/aoe2de-ontology#Huskarl
 :Huskarl rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
          :requires :Castle ,
@@ -1143,19 +1143,19 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyHussar
+###  https://github.com/akramer-zibra/aoe2de-ontology#Hussar
 :Hussar rdf:type owl:NamedIndividual ,
                  :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyImperialAge
+###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialAge
 :ImperialAge rdf:type owl:NamedIndividual ,
                       :Age ;
              :hasUniqueUnit :EliteTarkan ,
                             :Tarkan .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyImperialCamelRider
+###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialCamelRider
 :ImperialCamelRider rdf:type owl:NamedIndividual ,
                              :CavalryUnit ;
                     :requires :ImperialAge ,
@@ -1163,7 +1163,7 @@
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyImperialSkirmisher
+###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialSkirmisher
 :ImperialSkirmisher rdf:type owl:NamedIndividual ,
                              :ArcherUnit ;
                     :requires :ArcheryRange ,
@@ -1171,7 +1171,7 @@
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyIncas
+###  https://github.com/akramer-zibra/aoe2de-ontology#Incas
 :Incas rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :EliteKamayuk ,
@@ -1179,7 +1179,7 @@
                       :Slinger .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyIndians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Indians
 :Indians rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :ElephantArcher ,
@@ -1187,12 +1187,12 @@
                         :ImperialCamelRider .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyInfantryType
+###  https://github.com/akramer-zibra/aoe2de-ontology#InfantryType
 :InfantryType rdf:type owl:NamedIndividual ,
                        :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyItalians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Italians
 :Italians rdf:type owl:NamedIndividual ,
                    :Civilization ;
           :hasUniqueUnit :Condottiero ,
@@ -1200,7 +1200,7 @@
                          :GenoeseCrossbowman .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyJaguarWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#JaguarWarrior
 :JaguarWarrior rdf:type owl:NamedIndividual ,
                         :InfantryUnit ;
                :requires :Castle ,
@@ -1208,7 +1208,7 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyJanissary
+###  https://github.com/akramer-zibra/aoe2de-ontology#Janissary
 :Janissary rdf:type owl:NamedIndividual ,
                     :GunpowderUnit ;
            :requires :Castle ,
@@ -1216,14 +1216,14 @@
            :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyJapanese
+###  https://github.com/akramer-zibra/aoe2de-ontology#Japanese
 :Japanese rdf:type owl:NamedIndividual ,
                    :Civilization ;
           :hasUniqueUnit :EliteSamurai ,
                          :Samurai .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKamayuk
+###  https://github.com/akramer-zibra/aoe2de-ontology#Kamayuk
 :Kamayuk rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
          :requires :Castle ,
@@ -1231,7 +1231,7 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKarambitWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#KarambitWarrior
 :KarambitWarrior rdf:type owl:NamedIndividual ,
                           :InfantryUnit ;
                  :requires :Castle ,
@@ -1239,12 +1239,12 @@
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKeep
+###  https://github.com/akramer-zibra/aoe2de-ontology#Keep
 :Keep rdf:type owl:NamedIndividual ,
                :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKeshik
+###  https://github.com/akramer-zibra/aoe2de-ontology#Keshik
 :Keshik rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
         :requires :Castle ,
@@ -1252,14 +1252,14 @@
         :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKhmer
+###  https://github.com/akramer-zibra/aoe2de-ontology#Khmer
 :Khmer rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :BallistaElephant ,
                       :EliteBallistaElephant .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKipchak
+###  https://github.com/akramer-zibra/aoe2de-ontology#Kipchak
 :Kipchak rdf:type owl:NamedIndividual ,
                   :ArcherUnit ,
                   :CavalryUnit ;
@@ -1268,12 +1268,12 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKnight
+###  https://github.com/akramer-zibra/aoe2de-ontology#Knight
 :Knight rdf:type owl:NamedIndividual ,
                  :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKonnik
+###  https://github.com/akramer-zibra/aoe2de-ontology#Konnik
 :Konnik rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
         :requires :Castle ,
@@ -1282,7 +1282,7 @@
         :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKoreans
+###  https://github.com/akramer-zibra/aoe2de-ontology#Koreans
 :Koreans rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :EliteTurtleShip ,
@@ -1291,12 +1291,12 @@
                         :WarWagon .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyKrepost
+###  https://github.com/akramer-zibra/aoe2de-ontology#Krepost
 :Krepost rdf:type owl:NamedIndividual ,
                   :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLeitis
+###  https://github.com/akramer-zibra/aoe2de-ontology#Leitis
 :Leitis rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
         :requires :Castle ,
@@ -1304,24 +1304,24 @@
         :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLightCavalry
+###  https://github.com/akramer-zibra/aoe2de-ontology#LightCavalry
 :LightCavalry rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLithuanians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Lithuanians
 :Lithuanians rdf:type owl:NamedIndividual ,
                       :Civilization ;
              :hasUniqueUnit :EliteLeitis ,
                             :Leitis .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLongSwordsman
+###  https://github.com/akramer-zibra/aoe2de-ontology#LongSwordsman
 :LongSwordsman rdf:type owl:NamedIndividual ,
                         :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLongboat
+###  https://github.com/akramer-zibra/aoe2de-ontology#Longboat
 :Longboat rdf:type owl:NamedIndividual ,
                    :ShipUnit ;
           :requires :CastleAge ,
@@ -1329,7 +1329,7 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLongbowman
+###  https://github.com/akramer-zibra/aoe2de-ontology#Longbowman
 :Longbowman rdf:type owl:NamedIndividual ,
                      :ArcherUnit ;
             :requires :Castle ,
@@ -1337,12 +1337,12 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyLumberCamp
+###  https://github.com/akramer-zibra/aoe2de-ontology#LumberCamp
 :LumberCamp rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMagyarHuszar
+###  https://github.com/akramer-zibra/aoe2de-ontology#MagyarHuszar
 :MagyarHuszar rdf:type owl:NamedIndividual ,
                        :CavalryUnit ;
               :requires :Castle ,
@@ -1350,28 +1350,28 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMagyars
+###  https://github.com/akramer-zibra/aoe2de-ontology#Magyars
 :Magyars rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :EliteMagyarHuszar ,
                         :MagyarHuszar .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMalay
+###  https://github.com/akramer-zibra/aoe2de-ontology#Malay
 :Malay rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :EliteKarambitWarrior ,
                       :KarambitWarrior .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMalians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Malians
 :Malians rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :EliteGbeto ,
                         :Gbeto .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMameluke
+###  https://github.com/akramer-zibra/aoe2de-ontology#Mameluke
 :Mameluke rdf:type owl:NamedIndividual ,
                    :CavalryUnit ;
           :requires :Castle ,
@@ -1379,12 +1379,12 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMangonel
+###  https://github.com/akramer-zibra/aoe2de-ontology#Mangonel
 :Mangonel rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMangudai
+###  https://github.com/akramer-zibra/aoe2de-ontology#Mangudai
 :Mangudai rdf:type owl:NamedIndividual ,
                    :ArcherUnit ,
                    :CavalryUnit ;
@@ -1393,39 +1393,39 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMarket
+###  https://github.com/akramer-zibra/aoe2de-ontology#Market
 :Market rdf:type owl:NamedIndividual ,
                  :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMayans
+###  https://github.com/akramer-zibra/aoe2de-ontology#Mayans
 :Mayans rdf:type owl:NamedIndividual ,
                  :Civilization ;
         :hasUniqueUnit :ElitePlumedArcher ,
                        :PlumedArcher .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMenAtArms
+###  https://github.com/akramer-zibra/aoe2de-ontology#MenAtArms
 :MenAtArms rdf:type owl:NamedIndividual ,
                     :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMilitia
+###  https://github.com/akramer-zibra/aoe2de-ontology#Militia
 :Militia rdf:type owl:NamedIndividual ,
                   :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMill
+###  https://github.com/akramer-zibra/aoe2de-ontology#Mill
 :Mill rdf:type owl:NamedIndividual ,
                :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMiningCamp
+###  https://github.com/akramer-zibra/aoe2de-ontology#MiningCamp
 :MiningCamp rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMissionary
+###  https://github.com/akramer-zibra/aoe2de-ontology#Missionary
 :Missionary rdf:type owl:NamedIndividual ,
                      :CavalryUnit ,
                      :HealerUnit ,
@@ -1435,34 +1435,34 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMonastery
+###  https://github.com/akramer-zibra/aoe2de-ontology#Monastery
 :Monastery rdf:type owl:NamedIndividual ,
                     :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMongols
+###  https://github.com/akramer-zibra/aoe2de-ontology#Mongols
 :Mongols rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :EliteMangudai ,
                         :Mangudai .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMonk
+###  https://github.com/akramer-zibra/aoe2de-ontology#Monk
 :Monk rdf:type owl:NamedIndividual ,
                :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyMonkType
+###  https://github.com/akramer-zibra/aoe2de-ontology#MonkType
 :MonkType rdf:type owl:NamedIndividual ,
                    :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyOnager
+###  https://github.com/akramer-zibra/aoe2de-ontology#Onager
 :Onager rdf:type owl:NamedIndividual ,
                  :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyOrganGun
+###  https://github.com/akramer-zibra/aoe2de-ontology#OrganGun
 :OrganGun rdf:type owl:NamedIndividual ,
                    :SiegeUnit ;
           :requires :Castle ,
@@ -1470,49 +1470,49 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyOutpost
+###  https://github.com/akramer-zibra/aoe2de-ontology#Outpost
 :Outpost rdf:type owl:NamedIndividual ,
                   :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPaladin
+###  https://github.com/akramer-zibra/aoe2de-ontology#Paladin
 :Paladin rdf:type owl:NamedIndividual ,
                   :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPalisadeGate
+###  https://github.com/akramer-zibra/aoe2de-ontology#PalisadeGate
 :PalisadeGate rdf:type owl:NamedIndividual ,
                        :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPalisadeWall
+###  https://github.com/akramer-zibra/aoe2de-ontology#PalisadeWall
 :PalisadeWall rdf:type owl:NamedIndividual ,
                        :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPersians
+###  https://github.com/akramer-zibra/aoe2de-ontology#Persians
 :Persians rdf:type owl:NamedIndividual ,
                    :Civilization ;
           :hasUniqueUnit :EliteWarElephant ,
                          :WarElephant .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPetard
+###  https://github.com/akramer-zibra/aoe2de-ontology#Petard
 :Petard rdf:type owl:NamedIndividual ,
                  :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPetardType
+###  https://github.com/akramer-zibra/aoe2de-ontology#PetardType
 :PetardType rdf:type owl:NamedIndividual ,
                      :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPikeman
+###  https://github.com/akramer-zibra/aoe2de-ontology#Pikeman
 :Pikeman rdf:type owl:NamedIndividual ,
                   :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPlumedArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#PlumedArcher
 :PlumedArcher rdf:type owl:NamedIndividual ,
                        :ArcherUnit ;
               :requires :Castle ,
@@ -1520,7 +1520,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyPortuguese
+###  https://github.com/akramer-zibra/aoe2de-ontology#Portuguese
 :Portuguese rdf:type owl:NamedIndividual ,
                      :Civilization ;
             :hasUniqueUnit :Caravel ,
@@ -1529,7 +1529,7 @@
                            :OrganGun .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyRattanArcher
+###  https://github.com/akramer-zibra/aoe2de-ontology#RattanArcher
 :RattanArcher rdf:type owl:NamedIndividual ,
                        :ArcherUnit ;
               :requires :Castle ,
@@ -1537,7 +1537,7 @@
               :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySamurai
+###  https://github.com/akramer-zibra/aoe2de-ontology#Samurai
 :Samurai rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
          :requires :Castle ,
@@ -1545,29 +1545,29 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySaracens
+###  https://github.com/akramer-zibra/aoe2de-ontology#Saracens
 :Saracens rdf:type owl:NamedIndividual ,
                    :Civilization ;
           :hasUniqueUnit :EliteMameluke ,
                          :Mameluke .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyScorpion
+###  https://github.com/akramer-zibra/aoe2de-ontology#Scorpion
 :Scorpion rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyScoutCavalry
+###  https://github.com/akramer-zibra/aoe2de-ontology#ScoutCavalry
 :ScoutCavalry rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyShipType
+###  https://github.com/akramer-zibra/aoe2de-ontology#ShipType
 :ShipType rdf:type owl:NamedIndividual ,
                    :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyShotelWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#ShotelWarrior
 :ShotelWarrior rdf:type owl:NamedIndividual ,
                         :InfantryUnit ;
                :requires :Castle ,
@@ -1575,44 +1575,44 @@
                :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySiegeOnager
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeOnager
 :SiegeOnager rdf:type owl:NamedIndividual ,
                       :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySiegeRam
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeRam
 :SiegeRam rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySiegeTower
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeTower
 :SiegeTower rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySiegeType
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeType
 :SiegeType rdf:type owl:NamedIndividual ,
                     :UnitType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySiegeWorkshop
+###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeWorkshop
 :SiegeWorkshop rdf:type owl:NamedIndividual ,
                         :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySkirmisher
+###  https://github.com/akramer-zibra/aoe2de-ontology#Skirmisher
 :Skirmisher rdf:type owl:NamedIndividual ,
                      :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySlavs
+###  https://github.com/akramer-zibra/aoe2de-ontology#Slavs
 :Slavs rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :Boyar ,
                       :EliteBoyar .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySlinger
+###  https://github.com/akramer-zibra/aoe2de-ontology#Slinger
 :Slinger rdf:type owl:NamedIndividual ,
                   :ArcherUnit ;
          :requires :ArcheryRange ,
@@ -1620,7 +1620,7 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySpanish
+###  https://github.com/akramer-zibra/aoe2de-ontology#Spanish
 :Spanish rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :Conquistador ,
@@ -1628,27 +1628,27 @@
                         :Missionary .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySpearman
+###  https://github.com/akramer-zibra/aoe2de-ontology#Spearman
 :Spearman rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyStable
+###  https://github.com/akramer-zibra/aoe2de-ontology#Stable
 :Stable rdf:type owl:NamedIndividual ,
                  :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologySteppeLancer
+###  https://github.com/akramer-zibra/aoe2de-ontology#SteppeLancer
 :SteppeLancer rdf:type owl:NamedIndividual ,
                        :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyStoneWall
+###  https://github.com/akramer-zibra/aoe2de-ontology#StoneWall
 :StoneWall rdf:type owl:NamedIndividual ,
                     :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTarkan
+###  https://github.com/akramer-zibra/aoe2de-ontology#Tarkan
 :Tarkan rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
         :requires :Castle ,
@@ -1656,7 +1656,7 @@
         :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTatars
+###  https://github.com/akramer-zibra/aoe2de-ontology#Tatars
 :Tatars rdf:type owl:NamedIndividual ,
                  :Civilization ;
         :hasUniqueUnit :EliteKeshik ,
@@ -1664,7 +1664,7 @@
                        :Keshik .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTeutonicKnight
+###  https://github.com/akramer-zibra/aoe2de-ontology#TeutonicKnight
 :TeutonicKnight rdf:type owl:NamedIndividual ,
                          :InfantryUnit ;
                 :requires :Castle ,
@@ -1672,14 +1672,14 @@
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTeutons
+###  https://github.com/akramer-zibra/aoe2de-ontology#Teutons
 :Teutons rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :EliteTeutonicKnight ,
                         :TeutonicKnight .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyThrowingAxeman
+###  https://github.com/akramer-zibra/aoe2de-ontology#ThrowingAxeman
 :ThrowingAxeman rdf:type owl:NamedIndividual ,
                          :InfantryUnit ;
                 :requires :Castle ,
@@ -1687,39 +1687,39 @@
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTownCenter
+###  https://github.com/akramer-zibra/aoe2de-ontology#TownCenter
 :TownCenter rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTradeCart
+###  https://github.com/akramer-zibra/aoe2de-ontology#TradeCart
 :TradeCart rdf:type owl:NamedIndividual ,
                     :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTradeCog
+###  https://github.com/akramer-zibra/aoe2de-ontology#TradeCog
 :TradeCog rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTransportShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#TransportShip
 :TransportShip rdf:type owl:NamedIndividual ,
                         :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTrebuchet
+###  https://github.com/akramer-zibra/aoe2de-ontology#Trebuchet
 :Trebuchet rdf:type owl:NamedIndividual ,
                     :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTurks
+###  https://github.com/akramer-zibra/aoe2de-ontology#Turks
 :Turks rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :EliteJanissary ,
                       :Janissary .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTurtleShip
+###  https://github.com/akramer-zibra/aoe2de-ontology#TurtleShip
 :TurtleShip rdf:type owl:NamedIndividual ,
                      :ShipUnit ;
             :requires :CastleAge ,
@@ -1727,24 +1727,24 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyTwoHandedSwordsman
+###  https://github.com/akramer-zibra/aoe2de-ontology#TwoHandedSwordsman
 :TwoHandedSwordsman rdf:type owl:NamedIndividual ,
                              :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyUniversity
+###  https://github.com/akramer-zibra/aoe2de-ontology#University
 :University rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyVietnamese
+###  https://github.com/akramer-zibra/aoe2de-ontology#Vietnamese
 :Vietnamese rdf:type owl:NamedIndividual ,
                      :Civilization ;
             :hasUniqueUnit :EliteRattanArcher ,
                            :RattanArcher .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyVikings
+###  https://github.com/akramer-zibra/aoe2de-ontology#Vikings
 :Vikings rdf:type owl:NamedIndividual ,
                   :Civilization ;
          :hasUniqueUnit :Berserk ,
@@ -1753,12 +1753,12 @@
                         :Longboat .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyVillager
+###  https://github.com/akramer-zibra/aoe2de-ontology#Villager
 :Villager rdf:type owl:NamedIndividual ,
                    :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyWarElephant
+###  https://github.com/akramer-zibra/aoe2de-ontology#WarElephant
 :WarElephant rdf:type owl:NamedIndividual ,
                       :CavalryUnit ;
              :requires :Castle ,
@@ -1766,12 +1766,12 @@
              :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyWarGalley
+###  https://github.com/akramer-zibra/aoe2de-ontology#WarGalley
 :WarGalley rdf:type owl:NamedIndividual ,
                     :Unit .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyWarWagon
+###  https://github.com/akramer-zibra/aoe2de-ontology#WarWagon
 :WarWagon rdf:type owl:NamedIndividual ,
                    :ArcherUnit ,
                    :CavalryUnit ;
@@ -1780,17 +1780,17 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyWatchTower
+###  https://github.com/akramer-zibra/aoe2de-ontology#WatchTower
 :WatchTower rdf:type owl:NamedIndividual ,
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyWonder
+###  https://github.com/akramer-zibra/aoe2de-ontology#Wonder
 :Wonder rdf:type owl:NamedIndividual ,
                  :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyWoodRaider
+###  https://github.com/akramer-zibra/aoe2de-ontology#WoodRaider
 :WoodRaider rdf:type owl:NamedIndividual ,
                      :InfantryUnit ;
             :requires :Castle ,
@@ -1798,7 +1798,7 @@
             :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontologyXolotlWarrior
+###  https://github.com/akramer-zibra/aoe2de-ontology#XolotlWarrior
 :XolotlWarrior rdf:type owl:NamedIndividual ,
                         :CavalryUnit ;
                :requires :CastleAge ,
