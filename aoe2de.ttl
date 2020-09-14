@@ -74,14 +74,31 @@
             rdfs:range :Upgrade .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#isGameTypeOf
+:isGameTypeOf rdf:type owl:ObjectProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Building
+                                          :Unit
+                                        )
+                          ] ;
+              rdfs:range :Type .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#isRangeTypeOf
+:isRangeTypeOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Unit .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#isStrongAgainst
-:isStrongAgainst rdf:type owl:ObjectProperty .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#isUnitTypeOf
-:isUnitTypeOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Unit ;
-              rdfs:range :UnitType .
+:isStrongAgainst rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Unit ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( :Unit
+                                            :UnitCharacteristic
+                                            :UnitType
+                                          )
+                            ] .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#isUpgradeOf
@@ -91,7 +108,14 @@
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#isWeakAgainst
-:isWeakAgainst rdf:type owl:ObjectProperty .
+:isWeakAgainst rdf:type owl:ObjectProperty ;
+               rdfs:domain :Unit ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Unit
+                                          :UnitCharacteristic
+                                          :UnitType
+                                        )
+                          ] .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#requires
@@ -136,7 +160,7 @@
 :ArcherUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :ArcherUnit
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isUnitTypeOf ;
+                                                         owl:onProperty :isGameTypeOf ;
                                                          owl:hasValue :ArcherType
                                                        ]
                                                      ) ;
@@ -160,20 +184,45 @@
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Building
-:Building rdf:type owl:Class .
+:Building rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Building
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isGameTypeOf ;
+                                                       owl:hasValue :BuildingType
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryUnit
 :CavalryUnit rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :CavalryUnit
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty :isUnitTypeOf ;
+                                                          owl:onProperty :isGameTypeOf ;
                                                           owl:hasValue :CavalryType
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
                                  ] ;
              rdfs:subClassOf :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#Characteristic
+:Characteristic rdf:type owl:Class .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#CivilianUnit
+:CivilianUnit rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :CivilianUnit
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :isGameTypeOf ;
+                                                           owl:hasValue :CivilianType
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Unit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Civilization
@@ -199,7 +248,7 @@
 :GunpowderUnit rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :GunpowderUnit
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :isUnitTypeOf ;
+                                                            owl:onProperty :isGameTypeOf ;
                                                             owl:hasValue :GunpowderType
                                                           ]
                                                         ) ;
@@ -212,7 +261,7 @@
 :HealerUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :HealerUnit
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isUnitTypeOf ;
+                                                         owl:onProperty :isGameTypeOf ;
                                                          owl:hasValue :HealerType
                                                        ]
                                                      ) ;
@@ -230,7 +279,7 @@
 :InfantryUnit rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( :InfantryUnit
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isUnitTypeOf ;
+                                                           owl:onProperty :isGameTypeOf ;
                                                            owl:hasValue :InfantryType
                                                          ]
                                                        ) ;
@@ -243,7 +292,7 @@
 :MonkUnit rdf:type owl:Class ;
           owl:equivalentClass [ owl:intersectionOf ( :MonkUnit
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :isUnitTypeOf ;
+                                                       owl:onProperty :isGameTypeOf ;
                                                        owl:hasValue :MonkType
                                                      ]
                                                    ) ;
@@ -256,18 +305,13 @@
 :PetardUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :PetardUnit
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isUnitTypeOf ;
+                                                         owl:onProperty :isGameTypeOf ;
                                                          owl:hasValue :PetardType
                                                        ]
                                                      ) ;
                                   rdf:type owl:Class
                                 ] ;
             rdfs:subClassOf :Unit .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#RangeType
-:RangeType rdf:type owl:Class ;
-           rdfs:subClassOf :Type .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#RangeUpgrade
@@ -279,7 +323,7 @@
 :ShipUnit rdf:type owl:Class ;
           owl:equivalentClass [ owl:intersectionOf ( :ShipUnit
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :isUnitTypeOf ;
+                                                       owl:onProperty :isGameTypeOf ;
                                                        owl:hasValue :ShipType
                                                      ]
                                                    ) ;
@@ -292,13 +336,18 @@
 :SiegeUnit rdf:type owl:Class ;
            owl:equivalentClass [ owl:intersectionOf ( :SiegeUnit
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :isUnitTypeOf ;
+                                                        owl:onProperty :isGameTypeOf ;
                                                         owl:hasValue :SiegeType
                                                       ]
                                                     ) ;
                                  rdf:type owl:Class
                                ] ;
            rdfs:subClassOf :Unit .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#SightUpgrade
+:SightUpgrade rdf:type owl:Class ;
+              rdfs:subClassOf :Upgrade .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SpeedUpgrade
@@ -311,12 +360,22 @@
            rdfs:subClassOf :Bonus .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#TrainCostUpgrade
+:TrainCostUpgrade rdf:type owl:Class ;
+                  rdfs:subClassOf :Upgrade .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Type
 :Type rdf:type owl:Class .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Unit
 :Unit rdf:type owl:Class .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#UnitCharacteristic
+:UnitCharacteristic rdf:type owl:Class ;
+                    rdfs:subClassOf :Characteristic .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#UnitType
@@ -343,7 +402,9 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Arbalester
 :Arbalester rdf:type owl:NamedIndividual ,
-                     :Unit .
+                     :Unit ;
+            :isStrongAgainst :InfantryType ,
+                             :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Archer
@@ -386,12 +447,16 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#BatteringRam
 :BatteringRam rdf:type owl:NamedIndividual ,
-                       :Unit .
+                       :Unit ;
+              :isStrongAgainst :BuildingType ,
+                               :Trebuchet .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#BattleElephant
 :BattleElephant rdf:type owl:NamedIndividual ,
-                         :Unit .
+                         :Unit ;
+                :isStrongAgainst :BuildingType ,
+                                 :MeleeUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Berbers
@@ -441,6 +506,11 @@
                         :Longbowman .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#BuildingType
+:BuildingType rdf:type owl:NamedIndividual ,
+                       :Type .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Bulgarians
 :Bulgarians rdf:type owl:NamedIndividual ,
                      :Civilization ;
@@ -473,22 +543,35 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CamelRider
 :CamelRider rdf:type owl:NamedIndividual ,
-                     :Unit .
+                     :Unit ;
+            :isStrongAgainst :Cavalier ,
+                             :CavalryArcher ,
+                             :SiegeType ,
+                             :Skirmisher .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#CannonGalley
-:CannonGalley rdf:type owl:NamedIndividual ,
-                       :Unit .
+###  https://github.com/akramer-zibra/aoe2de-ontology#CannonGalleon
+:CannonGalleon rdf:type owl:NamedIndividual ,
+                        :Unit ;
+               :isStrongAgainst :BuildingType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CappedRam
 :CappedRam rdf:type owl:NamedIndividual ,
-                    :Unit .
+                    :Unit ;
+           :isStrongAgainst :ArcherType ,
+                            :BuildingType ,
+                            :Trebuchet .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Caravel
 :Caravel rdf:type owl:NamedIndividual ,
                   :ShipUnit ;
+         :isStrongAgainst :BuildingType ,
+                          :CannonGalleon ,
+                          :FishingShip ,
+                          :MeleeUnit ,
+                          :TransportShip ;
          :requires :CastleAge ,
                    :Dock ;
          :isUniqueUnit "true"^^xsd:boolean .
@@ -516,12 +599,20 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Cavalier
 :Cavalier rdf:type owl:NamedIndividual ,
-                   :Unit .
+                   :Unit ;
+          :isStrongAgainst :ArcherType ,
+                           :CavalryArcher ,
+                           :InfantryType ,
+                           :LightCavalry ,
+                           :SiegeType ,
+                           :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryArcher
 :CavalryArcher rdf:type owl:NamedIndividual ,
-                        :Unit .
+                        :Unit ;
+               :isStrongAgainst :MeleeUnit ,
+                                :SlowUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CavalryType
@@ -556,14 +647,21 @@
          :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#CloseRangedUnit
-:CloseRangedUnit rdf:type owl:NamedIndividual ,
-                          :RangeType .
+###  https://github.com/akramer-zibra/aoe2de-ontology#CivilianType
+:CivilianType rdf:type owl:NamedIndividual ,
+                       :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Condottiero
 :Condottiero rdf:type owl:NamedIndividual ,
                       :InfantryUnit ;
+             :isStrongAgainst :BombardCannon ,
+                              :BombardTower ,
+                              :Conquistador ,
+                              :HandCannoneer ,
+                              :Janissary ,
+                              :SiegeType ,
+                              :Skirmisher ;
              :requires :Barracks ,
                        :ImperialAge ;
              :isUniqueUnit "true"^^xsd:boolean .
@@ -580,7 +678,9 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Crossbowman
 :Crossbowman rdf:type owl:NamedIndividual ,
-                      :Unit .
+                      :Unit ;
+             :isStrongAgainst :InfantryType ,
+                              :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Cumans
@@ -597,12 +697,23 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#DemolitionRaft
 :DemolitionRaft rdf:type owl:NamedIndividual ,
-                         :Unit .
+                         :Unit ;
+                :isStrongAgainst :BuildingType ,
+                                 :FireGalley ,
+                                 :FishingShip ,
+                                 :MeleeUnit ,
+                                 :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#DemolitionShip
 :DemolitionShip rdf:type owl:NamedIndividual ,
-                         :Unit .
+                         :Unit ;
+                :isStrongAgainst :BuildingType ,
+                                 :CannonGalleon ,
+                                 :FireShip ,
+                                 :FishingShip ,
+                                 :MeleeUnit ,
+                                 :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Dock
@@ -612,12 +723,18 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EagleScout
 :EagleScout rdf:type owl:NamedIndividual ,
-                     :Unit .
+                     :Unit ;
+            :isStrongAgainst :ArcherType ,
+                             :ScoutCavalry ,
+                             :Skirmisher .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EagleWarrior
 :EagleWarrior rdf:type owl:NamedIndividual ,
-                       :Unit .
+                       :Unit ;
+              :isStrongAgainst :ArcherType ,
+                               :MonkType ,
+                               :SiegeType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ElephantArcher
@@ -649,7 +766,9 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBattleElephant
 :EliteBattleElephant rdf:type owl:NamedIndividual ,
-                              :Unit .
+                              :Unit ;
+                     :isStrongAgainst :BuildingType ,
+                                      :MeleeUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBerserk
@@ -677,14 +796,20 @@
                   :isUniqueUnit "true"^^xsd:boolean .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCannonGalley
-:EliteCannonGalley rdf:type owl:NamedIndividual ,
-                            :Unit .
+###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCannonGalleon
+:EliteCannonGalleon rdf:type owl:NamedIndividual ,
+                             :Unit ;
+                    :isStrongAgainst :BuildingType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCaravel
 :EliteCaravel rdf:type owl:NamedIndividual ,
                        :ShipUnit ;
+              :isStrongAgainst :BuildingType ,
+                               :CannonGalleon ,
+                               :FishingShip ,
+                               :MeleeUnit ,
+                               :TransportShip ;
               :requires :Dock ,
                         :ImperialAge ;
               :isUniqueUnit "true"^^xsd:boolean .
@@ -717,7 +842,10 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteEagleWarrior
 :EliteEagleWarrior rdf:type owl:NamedIndividual ,
-                            :Unit .
+                            :Unit ;
+                   :isStrongAgainst :ArcherType ,
+                                    :MonkType ,
+                                    :SiegeType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteElephantArcher
@@ -741,6 +869,8 @@
 :EliteGenitour rdf:type owl:NamedIndividual ,
                         :ArcherUnit ,
                         :CavalryUnit ;
+               :isStrongAgainst :ArcherType ,
+                                :CavalryArcher ;
                :requires :ArcheryRange ,
                          :ImperialAge ;
                :isUniqueUnit "true"^^xsd:boolean .
@@ -831,6 +961,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteLongboat
 :EliteLongboat rdf:type owl:NamedIndividual ,
                         :ShipUnit ;
+               :isStrongAgainst :BuildingType ,
+                                :CannonGalleon ,
+                                :FishingShip ,
+                                :Galleon ,
+                                :TransportShip ;
                :requires :Dock ,
                          :ImperialAge ;
                :isUniqueUnit "true"^^xsd:boolean .
@@ -911,17 +1046,27 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSkirmisher
 :EliteSkirmisher rdf:type owl:NamedIndividual ,
-                          :Unit .
+                          :Unit ;
+                 :isStrongAgainst :ArcherType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSteppeLancer
 :EliteSteppeLancer rdf:type owl:NamedIndividual ,
-                            :Unit .
+                            :Unit ;
+                   :isStrongAgainst :ArcherType ,
+                                    :LightCavalry ,
+                                    :SiegeType ,
+                                    :Skirmisher ,
+                                    :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteTarkan
 :EliteTarkan rdf:type owl:NamedIndividual ,
                       :CavalryUnit ;
+             :isStrongAgainst :ArcherType ,
+                              :BuildingType ,
+                              :LightCavalry ,
+                              :SiegeType ;
              :requires :Castle ,
                        :ImperialAge ;
              :isUniqueUnit "true"^^xsd:boolean .
@@ -946,6 +1091,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteTurtleShip
 :EliteTurtleShip rdf:type owl:NamedIndividual ,
                           :ShipUnit ;
+                 :isStrongAgainst :BuildingType ,
+                                  :ShipType ;
                  :requires :Dock ,
                            :ImperialAge ;
                  :isUniqueUnit "true"^^xsd:boolean .
@@ -990,7 +1137,18 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FastFireShip
 :FastFireShip rdf:type owl:NamedIndividual ,
-                       :Unit .
+                       :Unit ;
+              :isStrongAgainst :BuildingType ,
+                               :CannonGalleon ,
+                               :FishingShip ,
+                               :Galleon ,
+                               :MeleeUnit ,
+                               :TransportShip .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#FastUnit
+:FastUnit rdf:type owl:NamedIndividual ,
+                   :UnitCharacteristic .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Feitoria
@@ -1005,12 +1163,23 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FireGalley
 :FireGalley rdf:type owl:NamedIndividual ,
-                     :Unit .
+                     :Unit ;
+            :isStrongAgainst :BuildingType ,
+                             :FishingShip ,
+                             :Galley ,
+                             :MeleeUnit ,
+                             :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FireShip
 :FireShip rdf:type owl:NamedIndividual ,
-                   :Unit .
+                   :Unit ;
+          :isStrongAgainst :BuildingType ,
+                           :CannonGalleon ,
+                           :FishingShip ,
+                           :MeleeUnit ,
+                           :TransportShip ,
+                           :WarGalley .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FishTrap
@@ -1045,12 +1214,22 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Galleon
 :Galleon rdf:type owl:NamedIndividual ,
-                  :Unit .
+                  :Unit ;
+         :isStrongAgainst :BuildingType ,
+                          :CannonGalleon ,
+                          :DemolitionShip ,
+                          :FishingShip ,
+                          :MeleeUnit ,
+                          :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Galley
 :Galley rdf:type owl:NamedIndividual ,
-                 :Unit .
+                 :Unit ;
+        :isStrongAgainst :BuildingType ,
+                         :FishingShip ,
+                         :MeleeUnit ,
+                         :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Gate
@@ -1070,6 +1249,8 @@
 :Genitour rdf:type owl:NamedIndividual ,
                    :ArcherUnit ,
                    :CavalryUnit ;
+          :isStrongAgainst :ArcherType ,
+                           :CavalryArcher ;
           :requires :ArcheryRange ,
                     :CastleAge ;
           :isUniqueUnit "true"^^xsd:boolean .
@@ -1102,7 +1283,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Halberdier
 :Halberdier rdf:type owl:NamedIndividual ,
-                     :Unit .
+                     :Unit ;
+            :isStrongAgainst :CavalryType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HandCannoneer
@@ -1117,22 +1299,36 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCamelRider
 :HeavyCamelRider rdf:type owl:NamedIndividual ,
-                          :Unit .
+                          :Unit ;
+                 :isStrongAgainst :CavalryArcher ,
+                                  :CavalryType ,
+                                  :SiegeType ,
+                                  :Skirmisher .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCavalryArcher
 :HeavyCavalryArcher rdf:type owl:NamedIndividual ,
-                             :Unit .
+                             :Unit ;
+                    :isStrongAgainst :MeleeUnit ,
+                                     :SlowUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyDemolitionShip
 :HeavyDemolitionShip rdf:type owl:NamedIndividual ,
-                              :Unit .
+                              :Unit ;
+                     :isStrongAgainst :BuildingType ,
+                                      :CannonGalleon ,
+                                      :FishingShip ,
+                                      :MeleeUnit ,
+                                      :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyScorpion
 :HeavyScorpion rdf:type owl:NamedIndividual ,
-                        :Unit .
+                        :Unit ;
+               :isStrongAgainst :ArcherType ,
+                                :BuildingType ,
+                                :SlowUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#House
@@ -1150,6 +1346,12 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Huskarl
 :Huskarl rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
+         :isStrongAgainst :ArcherType ,
+                          :BuildingType ,
+                          :EagleWarrior ,
+                          :GunpowderType ,
+                          :LightCavalry ,
+                          :Scorpion ;
          :requires :Castle ,
                    :CastleAge ;
          :isUniqueUnit "true"^^xsd:boolean .
@@ -1157,7 +1359,10 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Hussar
 :Hussar rdf:type owl:NamedIndividual ,
-                 :Unit .
+                 :Unit ;
+        :isStrongAgainst :ArcherType ,
+                         :MonkType ,
+                         :SiegeType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialAge
@@ -1170,6 +1375,10 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialCamelRider
 :ImperialCamelRider rdf:type owl:NamedIndividual ,
                              :CavalryUnit ;
+                    :isStrongAgainst :CavalryArcher ,
+                                     :CavalryType ,
+                                     :SiegeType ,
+                                     :Skirmisher ;
                     :requires :ImperialAge ,
                               :Stable ;
                     :isUniqueUnit "true"^^xsd:boolean .
@@ -1178,6 +1387,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialSkirmisher
 :ImperialSkirmisher rdf:type owl:NamedIndividual ,
                              :ArcherUnit ;
+                    :isStrongAgainst :ArcherType ,
+                                     :Pikeman ;
                     :requires :ArcheryRange ,
                               :ImperialAge ;
                     :isUniqueUnit "true"^^xsd:boolean .
@@ -1282,7 +1493,13 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Knight
 :Knight rdf:type owl:NamedIndividual ,
-                 :Unit .
+                 :Unit ;
+        :isStrongAgainst :ArcherType ,
+                         :CavalryArcher ,
+                         :InfantryType ,
+                         :LightCavalry ,
+                         :SiegeType ,
+                         :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Konnik
@@ -1318,7 +1535,12 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#LightCavalry
 :LightCavalry rdf:type owl:NamedIndividual ,
-                       :Unit .
+                       :Unit ;
+              :isStrongAgainst :ArcherType ,
+                               :MonkType ,
+                               :SiegeType ,
+                               :Skirmisher ,
+                               :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Lithuanians
@@ -1330,12 +1552,23 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#LongSwordsman
 :LongSwordsman rdf:type owl:NamedIndividual ,
-                        :Unit .
+                        :Unit ;
+               :isStrongAgainst :BuildingType ,
+                                :CamelRider ,
+                                :EagleWarrior ,
+                                :LightCavalry ,
+                                :Pikeman ,
+                                :Skirmisher .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Longboat
 :Longboat rdf:type owl:NamedIndividual ,
                    :ShipUnit ;
+          :isStrongAgainst :BuildingType ,
+                           :CannonGalleon ,
+                           :FishingShip ,
+                           :Galleon ,
+                           :TransportShip ;
           :requires :CastleAge ,
                     :Dock ;
           :isUniqueUnit "true"^^xsd:boolean .
@@ -1393,7 +1626,13 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Mangonel
 :Mangonel rdf:type owl:NamedIndividual ,
-                   :Unit .
+                   :Unit ;
+          :isStrongAgainst :ArcherType ,
+                           :BatteringRam ,
+                           :BuildingType ,
+                           :Scorpion ,
+                           :Trebuchet ,
+                           :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Mangudai
@@ -1417,14 +1656,29 @@
                        :PlumedArcher .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#MeleeUnit
+:MeleeUnit rdf:type owl:NamedIndividual ,
+                    :UnitCharacteristic ;
+           :isStrongAgainst :InfantryType .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#MenAtArms
 :MenAtArms rdf:type owl:NamedIndividual ,
-                    :Unit .
+                    :Unit ;
+           :isStrongAgainst :EagleScout ,
+                            :ScoutCavalry ,
+                            :Skirmisher ,
+                            :Spearman ,
+                            :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Militia
 :Militia rdf:type owl:NamedIndividual ,
-                  :Unit .
+                  :Unit ;
+         :isStrongAgainst :ScoutCavalry ,
+                          :Skirmisher ,
+                          :Spearman ,
+                          :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Mill
@@ -1442,6 +1696,9 @@
                      :CavalryUnit ,
                      :HealerUnit ,
                      :MonkUnit ;
+            :isStrongAgainst :BuildingType ,
+                             :Knight ,
+                             :SlowUnit ;
             :requires :CastleAge ,
                       :Monastery ;
             :isUniqueUnit "true"^^xsd:boolean .
@@ -1461,7 +1718,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Monk
 :Monk rdf:type owl:NamedIndividual ,
-               :Unit .
+               :Unit ;
+      :isStrongAgainst :SlowUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#MonkType
@@ -1471,7 +1729,10 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Onager
 :Onager rdf:type owl:NamedIndividual ,
-                 :Unit .
+                 :Unit ;
+        :isStrongAgainst :ArcherType ,
+                         :BuildingType ,
+                         :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#OrganGun
@@ -1489,7 +1750,13 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Paladin
 :Paladin rdf:type owl:NamedIndividual ,
-                  :Unit .
+                  :Unit ;
+         :isStrongAgainst :ArcherType ,
+                          :CavalryArcher ,
+                          :InfantryType ,
+                          :LightCavalry ,
+                          :SiegeType ,
+                          :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#PalisadeGate
@@ -1511,7 +1778,10 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Petard
 :Petard rdf:type owl:NamedIndividual ,
-                 :Unit .
+                 :Unit ;
+        :isStrongAgainst :BuildingType ,
+                         :MeleeUnit ,
+                         :SiegeType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#PetardType
@@ -1521,7 +1791,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Pikeman
 :Pikeman rdf:type owl:NamedIndividual ,
-                  :Unit .
+                  :Unit ;
+         :isStrongAgainst :CavalryType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#PlumedArcher
@@ -1543,7 +1814,7 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#RangedUnit
 :RangedUnit rdf:type owl:NamedIndividual ,
-                     :RangeType .
+                     :UnitCharacteristic .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#RattanArcher
@@ -1571,12 +1842,21 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Scorpion
 :Scorpion rdf:type owl:NamedIndividual ,
-                   :Unit .
+                   :Unit ;
+          :isStrongAgainst :ArcherType ,
+                           :BuildingType ,
+                           :SlowUnit ,
+                           :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ScoutCavalry
 :ScoutCavalry rdf:type owl:NamedIndividual ,
-                       :Unit .
+                       :Unit ;
+              :isStrongAgainst :ArcherType ,
+                               :MonkType ,
+                               :SiegeType ,
+                               :Skirmisher ,
+                               :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ShipType
@@ -1594,12 +1874,16 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeOnager
 :SiegeOnager rdf:type owl:NamedIndividual ,
-                      :Unit .
+                      :Unit ;
+             :isStrongAgainst :BuildingType ,
+                              :Trebuchet .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeRam
 :SiegeRam rdf:type owl:NamedIndividual ,
-                   :Unit .
+                   :Unit ;
+          :isStrongAgainst :BuildingType ,
+                           :Trebuchet .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeTower
@@ -1619,7 +1903,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Skirmisher
 :Skirmisher rdf:type owl:NamedIndividual ,
-                     :Unit .
+                     :Unit ;
+            :isStrongAgainst :ArcherType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Slavs
@@ -1632,9 +1917,22 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Slinger
 :Slinger rdf:type owl:NamedIndividual ,
                   :ArcherUnit ;
+         :isStrongAgainst :InfantryType ,
+                          :Villager ;
          :requires :ArcheryRange ,
                    :CastleAge ;
          :isUniqueUnit "true"^^xsd:boolean .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#SlowUnit
+:SlowUnit rdf:type owl:NamedIndividual ,
+                   :UnitCharacteristic ;
+          :isStrongAgainst :ArcherType ,
+                           :BuildingType ,
+                           :Mangonel ,
+                           :Scorpion ,
+                           :SlowUnit ,
+                           :Trebuchet .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Spanish
@@ -1647,7 +1945,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Spearman
 :Spearman rdf:type owl:NamedIndividual ,
-                   :Unit .
+                   :Unit ;
+          :isStrongAgainst :CavalryType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Stable
@@ -1657,7 +1956,12 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SteppeLancer
 :SteppeLancer rdf:type owl:NamedIndividual ,
-                       :Unit .
+                       :Unit ;
+              :isStrongAgainst :ArcherType ,
+                               :LightCavalry ,
+                               :SiegeType ,
+                               :Skirmisher ,
+                               :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#StoneWall
@@ -1665,9 +1969,18 @@
                     :Building .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#StrongUnit
+:StrongUnit rdf:type owl:NamedIndividual ,
+                     :UnitCharacteristic .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Tarkan
 :Tarkan rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
+        :isStrongAgainst :ArcherType ,
+                         :BuildingType ,
+                         :LightCavalry ,
+                         :SiegeType ;
         :requires :Castle ,
                   :CastleAge ;
         :isUniqueUnit "true"^^xsd:boolean .
@@ -1726,7 +2039,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Trebuchet
 :Trebuchet rdf:type owl:NamedIndividual ,
-                    :Unit .
+                    :Unit ;
+           :isStrongAgainst :BuildingType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Turks
@@ -1739,6 +2053,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#TurtleShip
 :TurtleShip rdf:type owl:NamedIndividual ,
                      :ShipUnit ;
+            :isStrongAgainst :BuildingType ,
+                             :ShipType ;
             :requires :CastleAge ,
                       :Dock ;
             :isUniqueUnit "true"^^xsd:boolean .
@@ -1746,7 +2062,13 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#TwoHandedSwordsman
 :TwoHandedSwordsman rdf:type owl:NamedIndividual ,
-                             :Unit .
+                             :Unit ;
+                    :isStrongAgainst :BuildingType ,
+                                     :CamelRider ,
+                                     :EagleWarrior ,
+                                     :Halberdier ,
+                                     :LightCavalry ,
+                                     :Skirmisher .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#University
@@ -1785,7 +2107,11 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#WarGalley
 :WarGalley rdf:type owl:NamedIndividual ,
-                    :Unit .
+                    :Unit ;
+           :isStrongAgainst :BuildingType ,
+                            :FishingShip ,
+                            :MeleeUnit ,
+                            :TransportShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#WarWagon
@@ -1821,6 +2147,24 @@
                :requires :CastleAge ,
                          :Stable ;
                :isUniqueUnit "true"^^xsd:boolean .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :FastUnit
+                        :SlowUnit
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :MeleeUnit
+                        :RangedUnit
+                      )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
