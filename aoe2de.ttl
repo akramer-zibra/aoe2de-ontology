@@ -4,9 +4,10 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://github.com/akramer-zibra/aoe2de-ontology> .
 
-<https://github.com/akramer-zibra/aoe2de-ontology#> rdf:type owl:Ontology ;
-                                                     rdfs:comment "Diese Ontology beschreibt Wissen über Zusammenhänge und Eigenschaften von Entitäten des Spiels Age of Empires 2 Definitive Edition"@de .
+<https://github.com/akramer-zibra/aoe2de-ontology> rdf:type owl:Ontology ;
+                                                    rdfs:comment "Diese Ontology beschreibt Wissen über Zusammenhänge und Eigenschaften von Entitäten des Spiels Age of Empires 2 Definitive Edition"@de .
 
 #################################################################
 #    Object Properties
