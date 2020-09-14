@@ -265,6 +265,11 @@
             rdfs:subClassOf :Unit .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#RangeType
+:RangeType rdf:type owl:Class ;
+           rdfs:subClassOf :Type .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#RangeUpgrade
 :RangeUpgrade rdf:type owl:Class ;
               rdfs:subClassOf :Upgrade .
@@ -343,7 +348,9 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Archer
 :Archer rdf:type owl:NamedIndividual ,
-                 :Unit .
+                 :Unit ;
+        :isStrongAgainst :InfantryType ,
+                         :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ArcherType
@@ -547,6 +554,11 @@
          :requires :Castle ,
                    :CastleAge ;
          :isUniqueUnit "true"^^xsd:boolean .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#CloseRangedUnit
+:CloseRangedUnit rdf:type owl:NamedIndividual ,
+                          :RangeType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Condottiero
@@ -1527,6 +1539,11 @@
                            :EliteCaravel ,
                            :EliteOrganGun ,
                            :OrganGun .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#RangedUnit
+:RangedUnit rdf:type owl:NamedIndividual ,
+                     :RangeType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#RattanArcher
