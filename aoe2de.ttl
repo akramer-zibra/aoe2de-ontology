@@ -224,6 +224,14 @@
               owl:equivalentClass [ owl:intersectionOf ( :Civilization
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty :hasUnit ;
+                                                           owl:hasValue :Monk
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
+                                  [ owl:intersectionOf ( :Civilization
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasUnit ;
                                                            owl:hasValue :TradeCart
                                                          ]
                                                        ) ;
