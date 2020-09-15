@@ -232,7 +232,23 @@
                                   [ owl:intersectionOf ( :Civilization
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty :hasUnit ;
+                                                           owl:hasValue :Petard
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
+                                  [ owl:intersectionOf ( :Civilization
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasUnit ;
                                                            owl:hasValue :TradeCart
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
+                                  [ owl:intersectionOf ( :Civilization
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasUnit ;
+                                                           owl:hasValue :Trebuchet
                                                          ]
                                                        ) ;
                                     rdf:type owl:Class
