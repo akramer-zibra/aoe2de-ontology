@@ -1,0 +1,10 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <https://github.com/akramer-zibra/aoe2de-ontology#>
+
+SELECT *
+WHERE {
+	:Aztecs :hasUnit ?unit .
+	:Mangonel :is ?unitType .
+	{ ?unit :strongVersus :Mangonel } UNION { ?unit :strongVersus ?unitType }
+	OPTIONAL { ?unit :requires ?requirement }
+}
