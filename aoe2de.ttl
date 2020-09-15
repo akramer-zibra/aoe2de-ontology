@@ -341,7 +341,7 @@
              owl:equivalentClass [ owl:intersectionOf ( :SuicideUnit
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty :is ;
-                                                          owl:hasValue :PetardType
+                                                          owl:hasValue :SuicideType
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
@@ -2554,11 +2554,6 @@
                       :SiegeType .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#PetardType
-:PetardType rdf:type owl:NamedIndividual ,
-                     :UnitType .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Pikeman
 :Pikeman rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
@@ -2742,6 +2737,11 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#StrongUnit
 :StrongUnit rdf:type owl:NamedIndividual ,
                      :UnitCharacteristic .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#SuicideType
+:SuicideType rdf:type owl:NamedIndividual ,
+                      :UnitType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Tarkan
