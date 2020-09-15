@@ -1,0 +1,10 @@
+PREFIX : <https://github.com/akramer-zibra/aoe2de-ontology#>
+
+SELECT ?unit
+WHERE {
+	:Bulgarians :hasUnit ?unit .
+	{ ?unit :strongVersus :Skirmisher . }
+	UNION
+	{ :Skirmisher :is :unitType . 
+	  ?unit :strongVersus ?unitType . }
+}
