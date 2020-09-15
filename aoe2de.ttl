@@ -74,14 +74,14 @@
             rdfs:range :Upgrade .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#isGameTypeOf
-:isGameTypeOf rdf:type owl:ObjectProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Building
-                                          :Unit
-                                        )
-                          ] ;
-              rdfs:range :Type .
+###  https://github.com/akramer-zibra/aoe2de-ontology#is
+:is rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( :Building
+                                :Unit
+                              )
+                ] ;
+    rdfs:range :Type .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#isRangeTypeOf
@@ -160,7 +160,7 @@
 :ArcherUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :ArcherUnit
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isGameTypeOf ;
+                                                         owl:onProperty :is ;
                                                          owl:hasValue :ArcherType
                                                        ]
                                                      ) ;
@@ -187,7 +187,7 @@
 :Building rdf:type owl:Class ;
           owl:equivalentClass [ owl:intersectionOf ( :Building
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :isGameTypeOf ;
+                                                       owl:onProperty :is ;
                                                        owl:hasValue :BuildingType
                                                      ]
                                                    ) ;
@@ -199,7 +199,7 @@
 :CavalryUnit rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :CavalryUnit
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty :isGameTypeOf ;
+                                                          owl:onProperty :is ;
                                                           owl:hasValue :CavalryType
                                                         ]
                                                       ) ;
@@ -216,7 +216,7 @@
 :CivilianUnit rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( :CivilianUnit
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isGameTypeOf ;
+                                                           owl:onProperty :is ;
                                                            owl:hasValue :CivilianType
                                                          ]
                                                        ) ;
@@ -248,7 +248,7 @@
 :GunpowderUnit rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :GunpowderUnit
                                                           [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :isGameTypeOf ;
+                                                            owl:onProperty :is ;
                                                             owl:hasValue :GunpowderType
                                                           ]
                                                         ) ;
@@ -261,7 +261,7 @@
 :HealerUnit rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :HealerUnit
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isGameTypeOf ;
+                                                         owl:onProperty :is ;
                                                          owl:hasValue :HealerType
                                                        ]
                                                      ) ;
@@ -279,7 +279,7 @@
 :InfantryUnit rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( :InfantryUnit
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty :isGameTypeOf ;
+                                                           owl:onProperty :is ;
                                                            owl:hasValue :InfantryType
                                                          ]
                                                        ) ;
@@ -292,7 +292,7 @@
 :MonkUnit rdf:type owl:Class ;
           owl:equivalentClass [ owl:intersectionOf ( :MonkUnit
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :isGameTypeOf ;
+                                                       owl:onProperty :is ;
                                                        owl:hasValue :MonkType
                                                      ]
                                                    ) ;
@@ -305,7 +305,7 @@
 :NavalUnit rdf:type owl:Class ;
            owl:equivalentClass [ owl:intersectionOf ( :NavalUnit
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :isGameTypeOf ;
+                                                        owl:onProperty :is ;
                                                         owl:hasValue :ShipType
                                                       ]
                                                     ) ;
@@ -323,7 +323,7 @@
 :SiegeUnit rdf:type owl:Class ;
            owl:equivalentClass [ owl:intersectionOf ( :SiegeUnit
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :isGameTypeOf ;
+                                                        owl:onProperty :is ;
                                                         owl:hasValue :SiegeType
                                                       ]
                                                     ) ;
@@ -346,7 +346,7 @@
 :SuicideUnit rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :SuicideUnit
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty :isGameTypeOf ;
+                                                          owl:onProperty :is ;
                                                           owl:hasValue :PetardType
                                                         ]
                                                       ) ;
