@@ -84,12 +84,6 @@
     rdfs:range :Type .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#isRangeTypeOf
-:isRangeTypeOf rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain :Unit .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:domain [ rdf:type owl:Class ;
