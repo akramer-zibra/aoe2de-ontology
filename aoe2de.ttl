@@ -220,7 +220,23 @@
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Civilization
-:Civilization rdf:type owl:Class .
+:Civilization rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :Civilization
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasUnit ;
+                                                           owl:hasValue :TradeCart
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
+                                  [ owl:intersectionOf ( :Civilization
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasUnit ;
+                                                           owl:hasValue :Villager
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ConversionDefenseUpgrade
@@ -1962,9 +1978,7 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialAge
 :ImperialAge rdf:type owl:NamedIndividual ,
-                      :Age ;
-             :hasUniqueUnit :EliteTarkan ,
-                            :Tarkan .
+                      :Age .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ImperialCamelRider
