@@ -422,7 +422,45 @@
 :Aztecs rdf:type owl:NamedIndividual ,
                  :Civilization ;
         :hasUniqueUnit :EliteJaguarWarrior ,
-                       :JaguarWarrior .
+                       :JaguarWarrior ;
+        :hasUnit :Arbalester ,
+                 :Archer ,
+                 :BatteringRam ,
+                 :CappedRam ,
+                 :Champion ,
+                 :Crossbowman ,
+                 :DemolitionRaft ,
+                 :DemolitionShip ,
+                 :EagleScout ,
+                 :EagleWarrior ,
+                 :EliteEagleWarrior ,
+                 :EliteSkirmisher ,
+                 :FastFireShip ,
+                 :FireGalley ,
+                 :FireShip ,
+                 :FishingShip ,
+                 :Galley ,
+                 :LongSwordsman ,
+                 :ManAtArms ,
+                 :Mangonel ,
+                 :Militia ,
+                 :Monk ,
+                 :Onager ,
+                 :Petard ,
+                 :Pikeman ,
+                 :Scorpion ,
+                 :SiegeOnager ,
+                 :SiegeRam ,
+                 :SiegeTower ,
+                 :Skirmisher ,
+                 :Spearman ,
+                 :TradeCart ,
+                 :TradeCog ,
+                 :TransportShip ,
+                 :Trebuchet ,
+                 :TwoHandedSwordsman ,
+                 :Villager ,
+                 :WarGalley .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#BallistaElephant
@@ -459,7 +497,55 @@
          :hasUniqueUnit :CamelArcher ,
                         :EliteCamelArcher ,
                         :EliteGenitour ,
-                        :Genitour .
+                        :Genitour ;
+         :hasUnit :Archer ,
+                  :BatteringRam ,
+                  :BombardCannon ,
+                  :CamelRider ,
+                  :CannonGalleon ,
+                  :CappedRam ,
+                  :Cavalier ,
+                  :CavalryArcher ,
+                  :Champion ,
+                  :Crossbowman ,
+                  :DemolitionRaft ,
+                  :DemolitionShip ,
+                  :EliteCannonGalleon ,
+                  :EliteSkirmisher ,
+                  :FastFireShip ,
+                  :FireGalley ,
+                  :FireShip ,
+                  :FishingShip ,
+                  :Galleon ,
+                  :Galley ,
+                  :HandCannoneer ,
+                  :HeavyCamelRider ,
+                  :HeavyCavalryArcher ,
+                  :HeavyDemolitionShip ,
+                  :HeavyScorpion ,
+                  :Hussar ,
+                  :Knight ,
+                  :LightCavalry ,
+                  :LongSwordsman ,
+                  :ManAtArms ,
+                  :Mangonel ,
+                  :Militia ,
+                  :Monk ,
+                  :Onager ,
+                  :Petard ,
+                  :Pikeman ,
+                  :Scorpion ,
+                  :ScoutCavalry ,
+                  :SiegeTower ,
+                  :Skirmisher ,
+                  :Spearman ,
+                  :TradeCart ,
+                  :TradeCog ,
+                  :TransportShip ,
+                  :Trebuchet ,
+                  :TwoHandedSwordsman ,
+                  :Villager ,
+                  :WarGalley .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Berserk
@@ -628,6 +714,13 @@
                 :Civilization ;
        :hasUniqueUnit :EliteWoodRaider ,
                       :WoodRaider .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#Champion
+:Champion rdf:type owl:NamedIndividual ,
+                   :InfantryUnit ;
+          :strongVersus :BuildingType ,
+                        :InfantryType .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Chinese
@@ -1628,6 +1721,16 @@
           :isUniqueUnit "true"^^xsd:boolean .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#ManAtArms
+:ManAtArms rdf:type owl:NamedIndividual ,
+                    :InfantryUnit ;
+           :strongVersus :EagleScout ,
+                         :ScoutCavalry ,
+                         :Skirmisher ,
+                         :Spearman ,
+                         :Villager .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Mangonel
 :Mangonel rdf:type owl:NamedIndividual ,
                    :SiegeUnit ;
@@ -1664,16 +1767,6 @@
 :MeleeUnit rdf:type owl:NamedIndividual ,
                     :UnitCharacteristic ;
            :strongVersus :InfantryType .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#MenAtArms
-:MenAtArms rdf:type owl:NamedIndividual ,
-                    :InfantryUnit ;
-           :strongVersus :EagleScout ,
-                         :ScoutCavalry ,
-                         :Skirmisher ,
-                         :Spearman ,
-                         :Villager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Militia
