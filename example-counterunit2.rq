@@ -5,6 +5,6 @@ WHERE {
 	:Bulgarians :hasUnit ?unit .
 	{ ?unit :strongVersus :Skirmisher . }
 	UNION
-	{ :Skirmisher :is :unitType . 
+	{ :Skirmisher :is ?unitType . 
 	  ?unit :strongVersus ?unitType . }
 }
