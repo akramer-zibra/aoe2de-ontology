@@ -431,6 +431,9 @@
                   :CavalryUnit ;
          :requires :Castle ,
                    :CastleAge ;
+         :strongVersus :InfantryType ,
+                       :Monk ,
+                       :Villager ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -509,6 +512,10 @@
                            :SiegeUnit ;
                   :requires :Castle ,
                             :CastleAge ;
+                  :strongVersus :ArcherType ,
+                                :BuildingType ,
+                                :InfantryType ,
+                                :ShipType ;
                   :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -593,6 +600,12 @@
                   :InfantryUnit ;
          :requires :Castle ,
                    :CastleAge ;
+         :strongVersus :BuildingType ,
+                       :CamelRider ,
+                       :EagleWarrior ,
+                       :Halberdier ,
+                       :LightCavalry ,
+                       :Skirmisher ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -623,6 +636,9 @@
                 :CavalryUnit ;
        :requires :Castle ,
                  :CastleAge ;
+       :strongVersus :MeleeUnit ,
+                     :SiegeType ,
+                     :Skirmisher ;
        :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -845,6 +861,10 @@
                       :CavalryUnit ;
              :requires :Castle ,
                        :CastleAge ;
+             :strongVersus :CavalryArcher ,
+                           :Conquistador ,
+                           :Mangudai ,
+                           :SlowUnit ;
              :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -887,7 +907,12 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Castle
 :Castle rdf:type owl:NamedIndividual ,
-                 :Building .
+                 :Building ;
+        :strongVersus :BatteringRam ,
+                      :CappedRam ,
+                      :MeleeUnit ,
+                      :SiegeRam ,
+                      :SlowUnit .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CastleAge
@@ -902,6 +927,12 @@
                      :CavalryUnit ;
             :requires :Castle ,
                       :CastleAge ;
+            :strongVersus :HeavyCamelRider ,
+                          :InfantryType ,
+                          :LightCavalry ,
+                          :Mameluke ,
+                          :SiegeType ,
+                          :Skirmisher ;
             :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -933,7 +964,7 @@
 :Celts rdf:type owl:NamedIndividual ,
                 :Civilization ;
        :hasUniqueUnit :EliteWoodRaider ,
-                      :WoodRaider ;
+                      :WoadRaider ;
        :hasUnit :Archer ,
                 :BatteringRam ,
                 :CannonGalleon ,
@@ -1047,6 +1078,11 @@
                   :ArcherUnit ;
          :requires :Castle ,
                    :CastleAge ;
+         :strongVersus :BatteringRam ,
+                       :BuildingType ,
+                       :CappedRam ,
+                       :InfantryType ,
+                       :SiegeRam ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1076,6 +1112,10 @@
                        :GunpowderUnit ;
               :requires :Castle ,
                         :CastleAge ;
+              :strongVersus :BatteringRam ,
+                            :CappedRam ,
+                            :InfantryType ,
+                            :SiegeRam ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1168,6 +1208,15 @@
                               :TransportShip .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#DismountedKonnik
+:DismountedKonnik rdf:type owl:NamedIndividual ,
+                           :InfantryUnit ;
+                  owl:sameAs :Konnik ;
+                  :strongVersus :InfantryType ,
+                                :LightCavalry ,
+                                :Villager .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Dock
 :Dock rdf:type owl:NamedIndividual ,
                :Building .
@@ -1195,6 +1244,9 @@
                          :CavalryUnit ;
                 :requires :Castle ,
                           :CastleAge ;
+                :strongVersus :ArcherType ,
+                              :BuildingType ,
+                              :SlowUnit ;
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1698,6 +1750,12 @@
                        :SuicideUnit ;
               :requires :Castle ,
                         :ImperialAge ;
+              :strongVersus :BallistaElephant ,
+                            :BattleElephant ,
+                            :BuildingType ,
+                            :CavalryType ,
+                            :ElephantArcher ,
+                            :WarElephant ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1788,6 +1846,11 @@
                 :InfantryUnit ;
        :requires :Castle ,
                  :CastleAge ;
+       :strongVersus :BatteringRam ,
+                     :CavalryArcher ,
+                     :InfantryType ,
+                     :Pikeman ,
+                     :Skirmisher ;
        :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1807,6 +1870,9 @@
                              :ArcherUnit ;
                     :requires :Castle ,
                               :CastleAge ;
+                    :strongVersus :CavalryArcher ,
+                                  :CavalryType ,
+                                  :InfantryType ;
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2190,6 +2256,9 @@
                         :InfantryUnit ;
                :requires :Castle ,
                          :CastleAge ;
+               :strongVersus :BuildingType ,
+                             :InfantryType ,
+                             :Skirmisher ;
                :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2198,6 +2267,8 @@
                     :GunpowderUnit ;
            :requires :Castle ,
                      :CastleAge ;
+           :strongVersus :BuildingType ,
+                         :InfantryType ;
            :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2258,6 +2329,13 @@
                   :InfantryUnit ;
          :requires :Castle ,
                    :CastleAge ;
+         :strongVersus :BatteringRam ,
+                       :CappedRam ,
+                       :CavalryArcher ,
+                       :CavalryType ,
+                       :SiegeRam ,
+                       :Skirmisher ,
+                       :Spearman ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2266,6 +2344,12 @@
                           :InfantryUnit ;
                  :requires :Castle ,
                            :CastleAge ;
+                 :strongVersus :BatteringRam ,
+                               :CappedRam ,
+                               :EagleWarrior ,
+                               :Halberdier ,
+                               :SiegeRam ,
+                               :Skirmisher ;
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2279,6 +2363,12 @@
                  :CavalryUnit ;
         :requires :Castle ,
                   :CastleAge ;
+        :strongVersus :ArcherType ,
+                      :CavalryArcher ,
+                      :InfantryType ,
+                      :LightCavalry ,
+                      :SiegeType ,
+                      :Villager ;
         :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2363,6 +2453,11 @@
         :requires :Castle ,
                   :CastleAge ,
                   :Krepost ;
+        :strongVersus :ArcherType ,
+                      :InfantryType ,
+                      :LightCavalry ,
+                      :SiegeType ,
+                      :Villager ;
         :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2428,6 +2523,9 @@
                  :CavalryUnit ;
         :requires :Castle ,
                   :CastleAge ;
+        :strongVersus :Boyar ,
+                      :MeleeUnit ,
+                      :TeutonicKnight ;
         :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2523,6 +2621,8 @@
                      :ArcherUnit ;
             :requires :Castle ,
                       :CastleAge ;
+            :strongVersus :ArcherType ,
+                          :InfantryType ;
             :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2536,6 +2636,8 @@
                        :CavalryUnit ;
               :requires :Castle ,
                         :CastleAge ;
+              :strongVersus :ArcherType ,
+                            :SiegeType ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2650,6 +2752,9 @@
                    :CavalryUnit ;
           :requires :Castle ,
                     :CastleAge ;
+          :strongVersus :CavalryArcher ,
+                        :MeleeUnit ,
+                        :SiegeType ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2680,6 +2785,9 @@
                    :CavalryUnit ;
           :requires :Castle ,
                     :CastleAge ;
+          :strongVersus :InfantryType ,
+                        :SiegeType ,
+                        :Villager ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2697,8 +2805,7 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#MeleeUnit
 :MeleeUnit rdf:type owl:NamedIndividual ,
-                    :UnitCharacteristic ;
-           :strongVersus :InfantryType .
+                    :UnitCharacteristic .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Militia
@@ -2814,6 +2921,9 @@
                    :SiegeUnit ;
           :requires :Castle ,
                     :CastleAge ;
+          :strongVersus :BuildingType ,
+                        :Skirmisher ,
+                        :Villager ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2914,6 +3024,9 @@
                        :ArcherUnit ;
               :requires :Castle ,
                         :CastleAge ;
+              :strongVersus :ArcherType ,
+                            :HandCannoneer ,
+                            :InfantryType ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2975,6 +3088,8 @@
                        :ArcherUnit ;
               :requires :Castle ,
                         :CastleAge ;
+              :strongVersus :ArcherType ,
+                            :InfantryType ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2983,6 +3098,18 @@
                   :InfantryUnit ;
          :requires :Castle ,
                    :CastleAge ;
+         :strongVersus :BuildingType ,
+                       :CavalryType ,
+                       :EagleWarrior ,
+                       :InfantryType ,
+                       :LightCavalry ,
+                       :Pikeman ,
+                       :Skirmisher ;
+         :weakVersus :Cataphract ,
+                     :JaguarWarrior ,
+                     :Mameluke ,
+                     :TeutonicKnight ,
+                     :WarElephant ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3065,6 +3192,12 @@
                         :InfantryUnit ;
                :requires :Castle ,
                          :CastleAge ;
+               :strongVersus :LightCavalry ,
+                             :Monk ,
+                             :Pikeman ,
+                             :SiegeType ,
+                             :Skirmisher ,
+                             :Villager ;
                :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3162,13 +3295,7 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SlowUnit
 :SlowUnit rdf:type owl:NamedIndividual ,
-                   :UnitCharacteristic ;
-          :strongVersus :ArcherType ,
-                        :BuildingType ,
-                        :Mangonel ,
-                        :Scorpion ,
-                        :SlowUnit ,
-                        :Trebuchet .
+                   :UnitCharacteristic .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Spanish
@@ -3325,6 +3452,9 @@
                          :InfantryUnit ;
                 :requires :Castle ,
                           :CastleAge ;
+                :strongVersus :BuildingType ,
+                              :MeleeUnit ,
+                              :Skirmisher ;
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3380,6 +3510,17 @@
                          :InfantryUnit ;
                 :requires :Castle ,
                           :CastleAge ;
+                :strongVersus :BatteringRam ,
+                              :BuildingType ,
+                              :CamelRider ,
+                              :CappedRam ,
+                              :EagleWarrior ,
+                              :Halberdier ,
+                              :Huskarl ,
+                              :LightCavalry ,
+                              :SiegeRam ,
+                              :Skirmisher ,
+                              :Trebuchet ;
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3586,6 +3727,8 @@
                       :CavalryUnit ;
              :requires :Castle ,
                        :CastleAge ;
+             :strongVersus :BuildingType ,
+                           :MeleeUnit ;
              :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3604,6 +3747,8 @@
                    :CavalryUnit ;
           :requires :Castle ,
                     :CastleAge ;
+          :strongVersus :ArcherType ,
+                        :InfantryType ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3612,17 +3757,24 @@
                      :Building .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#Wonder
-:Wonder rdf:type owl:NamedIndividual ,
-                 :Building .
-
-
-###  https://github.com/akramer-zibra/aoe2de-ontology#WoodRaider
-:WoodRaider rdf:type owl:NamedIndividual ,
+###  https://github.com/akramer-zibra/aoe2de-ontology#WoadRaider
+:WoadRaider rdf:type owl:NamedIndividual ,
                      :InfantryUnit ;
             :requires :Castle ,
                       :CastleAge ;
+            :strongVersus :BuildingType ,
+                          :EagleWarrior ,
+                          :Halberdier ,
+                          :Huskarl ,
+                          :LightCavalry ,
+                          :SiegeType ,
+                          :Skirmisher ;
             :isUniqueUnit "true"^^xsd:boolean .
+
+
+###  https://github.com/akramer-zibra/aoe2de-ontology#Wonder
+:Wonder rdf:type owl:NamedIndividual ,
+                 :Building .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#XolotlWarrior
