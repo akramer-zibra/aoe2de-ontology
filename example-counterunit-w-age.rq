@@ -1,0 +1,13 @@
+PREFIX : <https://github.com/akramer-zibra/aoe2de-ontology#>
+
+SELECT DISTINCT ?unit ?age
+WHERE {
+	:Bulgarians :hasUnit ?unit .
+	?unit :requires ?age .
+	?age rdf:type :Age .
+	{ ?unit :strongVersus :Skirmisher . }
+	UNION
+	{ :Skirmisher :is ?type .
+	  ?unit :strongVersus ?type .}
+}
+ORDER BY ?age
