@@ -476,6 +476,15 @@
          :strongVersus :InfantryType ,
                        :Monk ,
                        :Villager ;
+         :weakVersus :CamelArcher ,
+                     :CamelRider ,
+                     :EagleWarrior ,
+                     :GenoeseCrossbowman ,
+                     :Huskarl ,
+                     :Kamayuk ,
+                     :Mameluke ,
+                     :Samurai ,
+                     :Skirmisher ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -573,6 +582,21 @@
                                 :BuildingType ,
                                 :InfantryType ,
                                 :ShipType ;
+                  :weakVersus :BatteringRam ,
+                              :BombardCannon ,
+                              :CamelRider ,
+                              :CappedRam ,
+                              :EagleWarrior ,
+                              :Halberdier ,
+                              :Huskarl ,
+                              :Kamayuk ,
+                              :MagyarHuszar ,
+                              :Mameluke ,
+                              :Mangonel ,
+                              :Mangudai ,
+                              :Samurai ,
+                              :Scorpion ,
+                              :SiegeRam ;
                   :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -679,6 +703,15 @@
                        :Halberdier ,
                        :LightCavalry ,
                        :Skirmisher ;
+         :weakVersus :Boyar ,
+                     :Cataphract ,
+                     :Conquistador ,
+                     :HandCannoneer ,
+                     :JaguarWarrior ,
+                     :PlumedArcher ,
+                     :Samurai ,
+                     :Slinger ,
+                     :TeutonicKnight ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -713,6 +746,16 @@
        :strongVersus :MeleeUnit ,
                      :SiegeType ,
                      :Skirmisher ;
+       :weakVersus :CamelRider ,
+                   :GenoeseCrossbowman ,
+                   :Kamayuk ,
+                   :Leitis ,
+                   :Mameluke ,
+                   :Monk ,
+                   :Pikeman ,
+                   :Samurai ,
+                   :TeutonicKnight ,
+                   :WarElephant ;
        :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -939,6 +982,11 @@
                            :Conquistador ,
                            :Mangudai ,
                            :SlowUnit ;
+             :weakVersus :CamelRider ,
+                         :EagleWarrior ,
+                         :Huskarl ,
+                         :Mangonel ,
+                         :Skirmisher ;
              :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1030,6 +1078,11 @@
                           :Mameluke ,
                           :SiegeType ,
                           :Skirmisher ;
+            :weakVersus :ArcherType ,
+                        :Halberdier ,
+                        :HeavyCamelRider ,
+                        :HeavyCavalryArcher ,
+                        :WarElephant ;
             :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1213,6 +1266,13 @@
                        :CappedRam ,
                        :InfantryType ,
                        :SiegeRam ;
+         :weakVersus :CavalryType ,
+                     :EagleWarrior ,
+                     :Genitour ,
+                     :Huskarl ,
+                     :Mangonel ,
+                     :Scorpion ,
+                     :Skirmisher ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1253,6 +1313,17 @@
                             :CappedRam ,
                             :InfantryType ,
                             :SiegeRam ;
+              :weakVersus :CamelRider ,
+                          :Condottiero ,
+                          :EagleWarrior ,
+                          :GenoeseCrossbowman ,
+                          :Huskarl ,
+                          :Kamayuk ,
+                          :Mameluke ,
+                          :Onager ,
+                          :Pikeman ,
+                          :Samurai ,
+                          :Skirmisher ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1376,7 +1447,9 @@
                   owl:sameAs :Konnik ;
                   :strongVersus :InfantryType ,
                                 :LightCavalry ,
-                                :Villager .
+                                :Villager ;
+                  :weakVersus :ArcherType ,
+                              :Cataphract .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Dock
@@ -1418,6 +1491,17 @@
                 :strongVersus :ArcherType ,
                               :BuildingType ,
                               :SlowUnit ;
+                :weakVersus :Berserk ,
+                            :CamelRider ,
+                            :EagleWarrior ,
+                            :GenoeseCrossbowman ,
+                            :Huskarl ,
+                            :Kamayuk ,
+                            :Mameluke ,
+                            :Monk ,
+                            :Pikeman ,
+                            :Samurai ,
+                            :Skirmisher ;
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2007,6 +2091,12 @@
                             :CavalryType ,
                             :ElephantArcher ,
                             :WarElephant ;
+              :weakVersus :ArcherType ,
+                          :BombardTower ,
+                          :Castle ,
+                          :GuardTower ,
+                          :SiegeTower ,
+                          :WatchTower ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2118,6 +2208,14 @@
                      :InfantryType ,
                      :Pikeman ,
                      :Skirmisher ;
+       :weakVersus :HandCannoneer ,
+                   :JaguarWarrior ,
+                   :Janissary ,
+                   :Mangonel ,
+                   :Monk ,
+                   :PlumedArcher ,
+                   :Samurai ,
+                   :Slinger ;
        :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2146,6 +2244,12 @@
                     :strongVersus :CavalryArcher ,
                                   :CavalryType ,
                                   :InfantryType ;
+                    :weakVersus :ArcherType ,
+                                :EagleWarrior ,
+                                :Huskarl ,
+                                :Mangonel ,
+                                :Samurai ,
+                                :Scorpion ;
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2588,6 +2692,16 @@
                :strongVersus :BuildingType ,
                              :InfantryType ,
                              :Skirmisher ;
+               :weakVersus :ArcherType ,
+                           :Boyar ,
+                           :Cataphract ,
+                           :Conquistador ,
+                           :HandCannoneer ,
+                           :Janissary ,
+                           :Knight ,
+                           :Mangonel ,
+                           :Scorpion ,
+                           :Slinger ;
                :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2598,6 +2712,13 @@
                      :CastleAge ;
            :strongVersus :BuildingType ,
                          :InfantryType ;
+           :weakVersus :BombardCannon ,
+                       :Condottiero ,
+                       :Huskarl ,
+                       :Mangonel ,
+                       :Samurai ,
+                       :Scorpion ,
+                       :Skirmisher ;
            :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2665,6 +2786,15 @@
                        :SiegeRam ,
                        :Skirmisher ,
                        :Spearman ;
+         :weakVersus :Cataphract ,
+                     :HandCannoneer ,
+                     :Janissary ,
+                     :Mangonel ,
+                     :Monk ,
+                     :PlumedArcher ,
+                     :Scorpion ,
+                     :Slinger ,
+                     :TeutonicKnight ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2679,6 +2809,17 @@
                                :Halberdier ,
                                :SiegeRam ,
                                :Skirmisher ;
+                 :weakVersus :ArcherType ,
+                             :Berserk ,
+                             :CavalryArcher ,
+                             :CavalryType ,
+                             :Conquistador ,
+                             :HandCannoneer ,
+                             :JaguarWarrior ,
+                             :Samurai ,
+                             :Slinger ,
+                             :TeutonicKnight ,
+                             :WarElephant ;
                  :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2698,6 +2839,17 @@
                       :LightCavalry ,
                       :SiegeType ,
                       :Villager ;
+        :weakVersus :Berserk ,
+                    :Boyar ,
+                    :CamelRider ,
+                    :GenoeseCrossbowman ,
+                    :Kamayuk ,
+                    :Knight ,
+                    :Mameluke ,
+                    :Monk ,
+                    :Pikeman ,
+                    :TeutonicKnight ,
+                    :WarElephant ;
         :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2762,6 +2914,18 @@
                   :CavalryUnit ;
          :requires :Castle ,
                    :CastleAge ;
+         :weakVersus :CamelRider ,
+                     :EagleWarrior ,
+                     :Genitour ,
+                     :GenoeseCrossbowman ,
+                     :HeavyCamelRider ,
+                     :Huskarl ,
+                     :ImperialCamelRider ,
+                     :Kamayuk ,
+                     :Mangonel ,
+                     :RattanArcher ,
+                     :Scorpion ,
+                     :Skirmisher ;
          :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2798,6 +2962,18 @@
                       :LightCavalry ,
                       :SiegeType ,
                       :Villager ;
+        :weakVersus :BattleElephant ,
+                    :Berserk ,
+                    :Boyar ,
+                    :CamelRider ,
+                    :GenoeseCrossbowman ,
+                    :Kamayuk ,
+                    :Mameluke ,
+                    :Monk ,
+                    :Pikeman ,
+                    :Samurai ,
+                    :TeutonicKnight ,
+                    :WarElephant ;
         :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2866,6 +3042,14 @@
         :strongVersus :Boyar ,
                       :MeleeUnit ,
                       :TeutonicKnight ;
+        :weakVersus :CamelRider ,
+                    :GenoeseCrossbowman ,
+                    :Kamayuk ,
+                    :Mameluke ,
+                    :Monk ,
+                    :Pikeman ,
+                    :Samurai ,
+                    :WarElephant ;
         :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2974,6 +3158,13 @@
                       :CastleAge ;
             :strongVersus :ArcherType ,
                           :InfantryType ;
+            :weakVersus :CavalryType ,
+                        :EagleWarrior ,
+                        :Genitour ,
+                        :Huskarl ,
+                        :Samurai ,
+                        :SiegeType ,
+                        :Skirmisher ;
             :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -2989,6 +3180,15 @@
                         :CastleAge ;
               :strongVersus :ArcherType ,
                             :SiegeType ;
+              :weakVersus :Berserk ,
+                          :Boyar ,
+                          :CamelRider ,
+                          :GenoeseCrossbowman ,
+                          :Kamayuk ,
+                          :Mameluke ,
+                          :Pikeman ,
+                          :Samurai ,
+                          :TeutonicKnight ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3106,6 +3306,12 @@
           :strongVersus :CavalryArcher ,
                         :MeleeUnit ,
                         :SiegeType ;
+          :weakVersus :CamelRider ,
+                      :Cataphract ,
+                      :GenoeseCrossbowman ,
+                      :Kamayuk ,
+                      :Pikeman ,
+                      :TeutonicKnight ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3156,6 +3362,17 @@
           :strongVersus :InfantryType ,
                         :SiegeType ,
                         :Villager ;
+          :weakVersus :CamelArcher ,
+                      :CamelRider ,
+                      :EagleWarrior ,
+                      :GenoeseCrossbowman ,
+                      :Halberdier ,
+                      :Huskarl ,
+                      :Kamayuk ,
+                      :Mameluke ,
+                      :Paladin ,
+                      :Samurai ,
+                      :Skirmisher ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3312,6 +3529,14 @@
           :strongVersus :BuildingType ,
                         :Skirmisher ,
                         :Villager ;
+          :weakVersus :BombardCannon ,
+                      :CavalryType ,
+                      :Condottiero ,
+                      :Huskarl ,
+                      :MagyarHuszar ,
+                      :Mangudai ,
+                      :Onager ,
+                      :Samurai ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3444,6 +3669,14 @@
               :strongVersus :ArcherType ,
                             :HandCannoneer ,
                             :InfantryType ;
+              :weakVersus :CavalryType ,
+                          :EagleWarrior ,
+                          :Genitour ,
+                          :Huskarl ,
+                          :Mangonel ,
+                          :RattanArcher ,
+                          :Scorpion ,
+                          :Skirmisher ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3507,6 +3740,10 @@
                         :CastleAge ;
               :strongVersus :ArcherType ,
                             :InfantryType ;
+              :weakVersus :CavalryType ,
+                          :EagleWarrior ,
+                          :Huskarl ,
+                          :SiegeType ;
               :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3522,9 +3759,12 @@
                        :LightCavalry ,
                        :Pikeman ,
                        :Skirmisher ;
-         :weakVersus :Cataphract ,
+         :weakVersus :ArcherType ,
+                     :Cataphract ,
+                     :HandCannoneer ,
                      :JaguarWarrior ,
                      :Mameluke ,
+                     :Slinger ,
                      :TeutonicKnight ,
                      :WarElephant ;
          :isUniqueUnit "true"^^xsd:boolean .
@@ -3619,6 +3859,9 @@
                              :SiegeType ,
                              :Skirmisher ,
                              :Villager ;
+               :weakVersus :CavalryArcher ,
+                           :HandCannoneer ,
+                           :Mangonel ;
                :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3909,6 +4152,16 @@
                 :strongVersus :BuildingType ,
                               :MeleeUnit ,
                               :Skirmisher ;
+                :weakVersus :ArcherType ,
+                            :Cataphract ,
+                            :Conquistador ,
+                            :HandCannoneer ,
+                            :Janissary ,
+                            :Leitis ,
+                            :Mangonel ,
+                            :Monk ,
+                            :Scorpion ,
+                            :Slinger ;
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -3975,6 +4228,15 @@
                               :SiegeRam ,
                               :Skirmisher ,
                               :Trebuchet ;
+                :weakVersus :ArcherType ,
+                            :Boyar ,
+                            :Cataphract ,
+                            :Conquistador ,
+                            :HandCannoneer ,
+                            :JaguarWarrior ,
+                            :Samurai ,
+                            :Slinger ,
+                            :TeutonicKnight ;
                 :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -4211,6 +4473,13 @@
                        :CastleAge ;
              :strongVersus :BuildingType ,
                            :MeleeUnit ;
+             :weakVersus :CamelRider ,
+                         :CavalryArcher ,
+                         :GenoeseCrossbowman ,
+                         :Kamayuk ,
+                         :Mameluke ,
+                         :Monk ,
+                         :Pikeman ;
              :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -4240,6 +4509,18 @@
                     :CastleAge ;
           :strongVersus :ArcherType ,
                         :InfantryType ;
+          :weakVersus :CamelRider ,
+                      :CavalryType ,
+                      :EagleWarrior ,
+                      :GenoeseCrossbowman ,
+                      :Huskarl ,
+                      :Kamayuk ,
+                      :Mameluke ,
+                      :Mangonel ,
+                      :Monk ,
+                      :Pikeman ,
+                      :Samurai ,
+                      :Skirmisher ;
           :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -4260,6 +4541,16 @@
                           :LightCavalry ,
                           :SiegeType ,
                           :Skirmisher ;
+            :weakVersus :ArcherType ,
+                        :Berserk ,
+                        :Conquistador ,
+                        :HandCannoneer ,
+                        :HeavyCamelRider ,
+                        :HeavyCavalryArcher ,
+                        :JaguarWarrior ,
+                        :Samurai ,
+                        :Slinger ,
+                        :TeutonicKnight ;
             :isUniqueUnit "true"^^xsd:boolean .
 
 
