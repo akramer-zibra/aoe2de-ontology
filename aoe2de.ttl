@@ -23,19 +23,6 @@
                     ] .
 
 
-###  https://github.com/akramer-zibra/aoe2de-ontology#availableFor
-:availableFor rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Bonus
-                                          :Building
-                                          :Unit
-                                          :Upgrade
-                                        )
-                          ] ;
-              rdfs:range :Civilization .
-
-
 ###  https://github.com/akramer-zibra/aoe2de-ontology#has
 :has rdf:type owl:ObjectProperty .
 
@@ -101,6 +88,7 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#strongVersus
 :strongVersus rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :versus ;
               rdfs:domain :Unit ;
               rdfs:range [ rdf:type owl:Class ;
                            owl:unionOf ( :Unit
@@ -116,8 +104,13 @@
            rdfs:range :Unit .
 
 
+###  https://github.com/akramer-zibra/aoe2de-ontology#versus
+:versus rdf:type owl:ObjectProperty .
+
+
 ###  https://github.com/akramer-zibra/aoe2de-ontology#weakVersus
 :weakVersus rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :versus ;
             rdfs:domain :Unit ;
             rdfs:range [ rdf:type owl:Class ;
                          owl:unionOf ( :Unit
