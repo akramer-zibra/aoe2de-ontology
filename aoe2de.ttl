@@ -484,7 +484,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Arbalester
 :Arbalester rdf:type owl:NamedIndividual ,
                      :ArcherUnit ;
-            :requires :ImperialAge ;
+            :requires :ArcheryRange ,
+                      :ImperialAge ;
             :strongVersus :InfantryType ,
                           :Villager ;
             :weakVersus :CavalryType ,
@@ -502,7 +503,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Archer
 :Archer rdf:type owl:NamedIndividual ,
                  :ArcherUnit ;
-        :requires :FeudalAge ;
+        :requires :ArcheryRange ,
+                  :FeudalAge ;
         :strongVersus :InfantryType ,
                       :Villager ;
         :weakVersus :EagleScout ,
@@ -601,7 +603,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#BatteringRam
 :BatteringRam rdf:type owl:NamedIndividual ,
                        :SiegeUnit ;
-              :requires :CastleAge ;
+              :requires :CastleAge ,
+                        :SiegeWorkshop ;
               :strongVersus :BuildingType ,
                             :Trebuchet ;
               :weakVersus :EliteMagyarHuszar ,
@@ -614,7 +617,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#BattleElephant
 :BattleElephant rdf:type owl:NamedIndividual ,
                          :CavalryUnit ;
-                :requires :CastleAge ;
+                :requires :CastleAge ,
+                          :Stable ;
                 :strongVersus :BuildingType ,
                               :MeleeUnit ;
                 :weakVersus :CavalryArcher ,
@@ -717,7 +721,8 @@
 :BombardCannon rdf:type owl:NamedIndividual ,
                         :GunpowderUnit ,
                         :RangedSiegeUnit ;
-               :requires :ImperialAge ;
+               :requires :ImperialAge ,
+                         :SiegeWorkshop ;
                :strongVersus :ArcherType ,
                              :BuildingType ,
                              :Mangonel ,
@@ -986,7 +991,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CamelRider
 :CamelRider rdf:type owl:NamedIndividual ,
                      :CavalryUnit ;
-            :requires :CastleAge ;
+            :requires :CastleAge ,
+                      :Stable ;
             :strongVersus :Cavalier ,
                           :CavalryArcher ,
                           :SiegeType ,
@@ -1001,7 +1007,8 @@
 :CannonGalleon rdf:type owl:NamedIndividual ,
                         :GunpowderUnit ,
                         :NavalUnit ;
-               :requires :ImperialAge ;
+               :requires :Dock ,
+                         :ImperialAge ;
                :strongVersus :BuildingType ;
                :weakVersus :BombardCannon ,
                            :Monk ,
@@ -1011,7 +1018,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#CappedRam
 :CappedRam rdf:type owl:NamedIndividual ,
                     :SiegeUnit ;
-           :requires :CappedRam ;
+           :requires :CappedRam ,
+                     :SiegeWorkshop ;
            :strongVersus :ArcherType ,
                          :BuildingType ,
                          :Trebuchet ;
@@ -1082,7 +1090,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Cavalier
 :Cavalier rdf:type owl:NamedIndividual ,
                    :CavalryUnit ;
-          :requires :ImperialAge ;
+          :requires :ImperialAge ,
+                    :Stable ;
           :strongVersus :ArcherType ,
                         :CavalryArcher ,
                         :InfantryType ,
@@ -1105,7 +1114,8 @@
 :CavalryArcher rdf:type owl:NamedIndividual ,
                         :ArcherUnit ,
                         :CavalryUnit ;
-               :requires :CastleAge ;
+               :requires :ArcheryRange ,
+                         :CastleAge ;
                :strongVersus :MeleeUnit ,
                              :SlowUnit ;
                :weakVersus :CamelArcher ,
@@ -1181,7 +1191,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Champion
 :Champion rdf:type owl:NamedIndividual ,
                    :InfantryUnit ;
-          :requires :ImperialAge ;
+          :requires :Barracks ,
+                    :ImperialAge ;
           :strongVersus :BuildingType ,
                         :InfantryType ;
           :weakVersus :ArcherType ,
@@ -1323,7 +1334,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Crossbowman
 :Crossbowman rdf:type owl:NamedIndividual ,
                       :ArcherUnit ;
-             :requires :CastleAge ;
+             :requires :ArcheryRange ,
+                       :CastleAge ;
              :strongVersus :InfantryType ,
                            :Villager ;
              :weakVersus :BatteringRam ,
@@ -1404,7 +1416,8 @@
 :DemolitionRaft rdf:type owl:NamedIndividual ,
                          :NavalUnit ,
                          :SuicideUnit ;
-                :requires :FeudalAge ;
+                :requires :Dock ,
+                          :FeudalAge ;
                 :strongVersus :BuildingType ,
                               :FireGalley ,
                               :FishingShip ,
@@ -1416,7 +1429,8 @@
 :DemolitionShip rdf:type owl:NamedIndividual ,
                          :NavalUnit ,
                          :SuicideUnit ;
-                :requires :CastleAge ;
+                :requires :CastleAge ,
+                          :Dock ;
                 :strongVersus :BuildingType ,
                               :CannonGalleon ,
                               :FireShip ,
@@ -1453,7 +1467,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EagleScout
 :EagleScout rdf:type owl:NamedIndividual ,
                      :InfantryUnit ;
-            :requires :FeudalAge ;
+            :requires :Barracks ,
+                      :FeudalAge ;
             :strongVersus :ArcherType ,
                           :ScoutCavalry ,
                           :Skirmisher ;
@@ -1463,7 +1478,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EagleWarrior
 :EagleWarrior rdf:type owl:NamedIndividual ,
                        :InfantryUnit ;
-              :requires :CastleAge ;
+              :requires :Barracks ,
+                        :CastleAge ;
               :strongVersus :ArcherType ,
                             :MonkType ,
                             :SiegeType ;
@@ -1519,7 +1535,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteBattleElephant
 :EliteBattleElephant rdf:type owl:NamedIndividual ,
                               :CavalryUnit ;
-                     :requires :ImperialAge ;
+                     :requires :ImperialAge ,
+                               :Stable ;
                      :strongVersus :BuildingType ,
                                    :MeleeUnit ;
                      :weakVersus :CavalryArcher ,
@@ -1561,7 +1578,8 @@
 :EliteCannonGalleon rdf:type owl:NamedIndividual ,
                              :GunpowderUnit ,
                              :NavalUnit ;
-                    :requires :ImperialAge ;
+                    :requires :Dock ,
+                              :ImperialAge ;
                     :strongVersus :BuildingType .
 
 
@@ -1616,7 +1634,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteEagleWarrior
 :EliteEagleWarrior rdf:type owl:NamedIndividual ,
                             :InfantryUnit ;
-                   :requires :ImperialAge ;
+                   :requires :Barracks ,
+                             :ImperialAge ;
                    :strongVersus :ArcherType ,
                                  :MonkType ,
                                  :SiegeType ;
@@ -1842,7 +1861,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSkirmisher
 :EliteSkirmisher rdf:type owl:NamedIndividual ,
                           :ArcherUnit ;
-                 :requires :CastleAge ;
+                 :requires :ArcheryRange ,
+                           :CastleAge ;
                  :strongVersus :ArcherType ;
                  :weakVersus :MeleeUnit ,
                              :SiegeType .
@@ -1851,7 +1871,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteSteppeLancer
 :EliteSteppeLancer rdf:type owl:NamedIndividual ,
                             :CavalryUnit ;
-                   :requires :ImperialAge ;
+                   :requires :ImperialAge ,
+                             :Stable ;
                    :strongVersus :ArcherType ,
                                  :LightCavalry ,
                                  :SiegeType ,
@@ -2006,7 +2027,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FastFireShip
 :FastFireShip rdf:type owl:NamedIndividual ,
                        :NavalUnit ;
-              :requires :ImperialAge ;
+              :requires :Dock ,
+                        :ImperialAge ;
               :strongVersus :BuildingType ,
                             :CannonGalleon ,
                             :FishingShip ,
@@ -2035,7 +2057,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FireGalley
 :FireGalley rdf:type owl:NamedIndividual ,
                      :NavalUnit ;
-            :requires :FeudalAge ;
+            :requires :Dock ,
+                      :FeudalAge ;
             :strongVersus :BuildingType ,
                           :FishingShip ,
                           :Galley ,
@@ -2052,7 +2075,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FireShip
 :FireShip rdf:type owl:NamedIndividual ,
                    :NavalUnit ;
-          :requires :CastleAge ;
+          :requires :CastleAge ,
+                    :Dock ;
           :strongVersus :BuildingType ,
                         :CannonGalleon ,
                         :FishingShip ,
@@ -2070,7 +2094,8 @@
 :FishingShip rdf:type owl:NamedIndividual ,
                       :CivilianUnit ,
                       :NavalUnit ;
-             :requires :DarkAge .
+             :requires :DarkAge ,
+                       :Dock .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FlamingCamel
@@ -2153,7 +2178,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Galleon
 :Galleon rdf:type owl:NamedIndividual ,
                   :NavalUnit ;
-         :requires :ImperialAge ;
+         :requires :Dock ,
+                   :ImperialAge ;
          :strongVersus :BuildingType ,
                        :CannonGalleon ,
                        :DemolitionShip ,
@@ -2173,7 +2199,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Galley
 :Galley rdf:type owl:NamedIndividual ,
                  :NavalUnit ;
-        :requires :FeudalAge ;
+        :requires :Dock ,
+                  :FeudalAge ;
         :strongVersus :BuildingType ,
                       :FishingShip ,
                       :MeleeUnit ,
@@ -2312,7 +2339,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Halberdier
 :Halberdier rdf:type owl:NamedIndividual ,
                      :InfantryUnit ;
-            :requires :ImperialAge ;
+            :requires :Barracks ,
+                      :ImperialAge ;
             :strongVersus :CavalryType ;
             :weakVersus :ArcherType ,
                         :HandCannoneer ,
@@ -2326,7 +2354,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HandCannoneer
 :HandCannoneer rdf:type owl:NamedIndividual ,
                         :GunpowderUnit ;
-               :requires :ImperialAge ;
+               :requires :ArcheryRange ,
+                         :ImperialAge ;
                :strongVersus :InfantryType ;
                :weakVersus :ArcherType ,
                            :Condottiero ,
@@ -2346,7 +2375,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyCamelRider
 :HeavyCamelRider rdf:type owl:NamedIndividual ,
                           :CavalryUnit ;
-                 :requires :ImperialAge ;
+                 :requires :ImperialAge ,
+                           :Stable ;
                  :strongVersus :CavalryArcher ,
                                :CavalryType ,
                                :SiegeType ,
@@ -2360,7 +2390,8 @@
 :HeavyCavalryArcher rdf:type owl:NamedIndividual ,
                              :ArcherUnit ,
                              :CavalryUnit ;
-                    :requires :ImperialAge ;
+                    :requires :ArcheryRange ,
+                              :ImperialAge ;
                     :strongVersus :MeleeUnit ,
                                   :SlowUnit ;
                     :weakVersus :CamelArcher ,
@@ -2380,7 +2411,8 @@
 :HeavyDemolitionShip rdf:type owl:NamedIndividual ,
                               :NavalUnit ,
                               :SuicideUnit ;
-                     :requires :ImperialAge ;
+                     :requires :Dock ,
+                               :ImperialAge ;
                      :strongVersus :BuildingType ,
                                    :CannonGalleon ,
                                    :FishingShip ,
@@ -2397,7 +2429,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#HeavyScorpion
 :HeavyScorpion rdf:type owl:NamedIndividual ,
                         :RangedSiegeUnit ;
-               :requires :ImperialAge ;
+               :requires :ImperialAge ,
+                         :SiegeWorkshop ;
                :strongVersus :ArcherType ,
                              :BuildingType ,
                              :SlowUnit .
@@ -2475,7 +2508,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Hussar
 :Hussar rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
-        :requires :ImperialAge ;
+        :requires :ImperialAge ,
+                  :Stable ;
         :strongVersus :ArcherType ,
                       :MonkType ,
                       :SiegeType ;
@@ -2925,7 +2959,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Knight
 :Knight rdf:type owl:NamedIndividual ,
                  :CavalryUnit ;
-        :requires :CastleAge ;
+        :requires :CastleAge ,
+                  :Stable ;
         :strongVersus :ArcherType ,
                       :CavalryArcher ,
                       :InfantryType ,
@@ -3049,7 +3084,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#LightCavalry
 :LightCavalry rdf:type owl:NamedIndividual ,
                        :CavalryUnit ;
-              :requires :CastleAge ;
+              :requires :CastleAge ,
+                        :Stable ;
               :strongVersus :ArcherType ,
                             :MonkType ,
                             :SiegeType ,
@@ -3114,7 +3150,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#LongSwordsman
 :LongSwordsman rdf:type owl:NamedIndividual ,
                         :InfantryUnit ;
-               :requires :CastleAge ;
+               :requires :Barracks ,
+                         :CastleAge ;
                :strongVersus :BuildingType ,
                              :CamelRider ,
                              :EagleWarrior ,
@@ -3311,7 +3348,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ManAtArms
 :ManAtArms rdf:type owl:NamedIndividual ,
                     :InfantryUnit ;
-           :requires :DarkAge ;
+           :requires :Barracks ,
+                     :DarkAge ;
            :strongVersus :EagleScout ,
                          :ScoutCavalry ,
                          :Skirmisher ,
@@ -3331,7 +3369,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Mangonel
 :Mangonel rdf:type owl:NamedIndividual ,
                    :RangedSiegeUnit ;
-          :requires :CastleAge ;
+          :requires :CastleAge ,
+                    :SiegeWorkshop ;
           :strongVersus :ArcherType ,
                         :BatteringRam ,
                         :BuildingType ,
@@ -3389,7 +3428,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Militia
 :Militia rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
-         :requires :DarkAge ;
+         :requires :Barracks ,
+                   :DarkAge ;
          :strongVersus :ScoutCavalry ,
                        :Skirmisher ,
                        :Spearman ,
@@ -3489,7 +3529,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Monk
 :Monk rdf:type owl:NamedIndividual ,
                :MonkUnit ;
-      :requires :CastleAge ;
+      :requires :CastleAge ,
+                :Monastery ;
       :strongVersus :SlowUnit .
 
 
@@ -3501,7 +3542,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Onager
 :Onager rdf:type owl:NamedIndividual ,
                  :RangedSiegeUnit ;
-        :requires :ImperialAge ;
+        :requires :ImperialAge ,
+                  :SiegeWorkshop ;
         :strongVersus :ArcherType ,
                       :BuildingType ,
                       :Villager ;
@@ -3541,7 +3583,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Paladin
 :Paladin rdf:type owl:NamedIndividual ,
                   :CavalryUnit ;
-         :requires :ImperialAge ;
+         :requires :ImperialAge ,
+                   :Stable ;
          :strongVersus :ArcherType ,
                        :CavalryArcher ,
                        :InfantryType ,
@@ -3625,7 +3668,8 @@
 :Petard rdf:type owl:NamedIndividual ,
                  :SiegeUnit ,
                  :SuicideUnit ;
-        :requires :CastleAge ;
+        :requires :Castle ,
+                  :CastleAge ;
         :strongVersus :BuildingType ,
                       :MeleeUnit ,
                       :SiegeType ;
@@ -3644,7 +3688,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Pikeman
 :Pikeman rdf:type owl:NamedIndividual ,
                   :InfantryUnit ;
-         :requires :CastleAge ;
+         :requires :Barracks ,
+                   :CastleAge ;
          :strongVersus :CavalryType ;
          :weakVersus :ArcherType ,
                      :Cataphract ,
@@ -3816,7 +3861,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Scorpion
 :Scorpion rdf:type owl:NamedIndividual ,
                    :RangedSiegeUnit ;
-          :requires :Scorpion ;
+          :requires :Scorpion ,
+                    :SiegeWorkshop ;
           :strongVersus :ArcherType ,
                         :BuildingType ,
                         :SlowUnit ,
@@ -3826,7 +3872,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#ScoutCavalry
 :ScoutCavalry rdf:type owl:NamedIndividual ,
                        :CavalryUnit ;
-              :requires :FeudalAge ;
+              :requires :FeudalAge ,
+                        :Stable ;
               :strongVersus :ArcherType ,
                             :MonkType ,
                             :SiegeType ,
@@ -3861,7 +3908,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeOnager
 :SiegeOnager rdf:type owl:NamedIndividual ,
                       :RangedSiegeUnit ;
-             :requires :ImperialAge ;
+             :requires :ImperialAge ,
+                       :SiegeWorkshop ;
              :strongVersus :BuildingType ,
                            :Trebuchet .
 
@@ -3869,7 +3917,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeRam
 :SiegeRam rdf:type owl:NamedIndividual ,
                    :SiegeUnit ;
-          :requires :ImperialAge ;
+          :requires :ImperialAge ,
+                    :SiegeWorkshop ;
           :strongVersus :BuildingType ,
                         :Trebuchet ;
           :weakVersus :EliteMagyarHuszar ,
@@ -3882,7 +3931,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeTower
 :SiegeTower rdf:type owl:NamedIndividual ,
                      :SiegeUnit ;
-            :requires :CastleAge .
+            :requires :CastleAge ,
+                      :SiegeWorkshop .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeType
@@ -3898,7 +3948,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Skirmisher
 :Skirmisher rdf:type owl:NamedIndividual ,
                      :ArcherUnit ;
-            :requires :FeudalAge ;
+            :requires :ArcheryRange ,
+                      :FeudalAge ;
             :strongVersus :ArcherType .
 
 
@@ -4023,7 +4074,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Spearman
 :Spearman rdf:type owl:NamedIndividual ,
                    :InfantryUnit ;
-          :requires :FeudalAge ;
+          :requires :Barracks ,
+                    :FeudalAge ;
           :strongVersus :CavalryType ;
           :weakVersus :ArcherType ,
                       :InfantryType .
@@ -4037,7 +4089,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SteppeLancer
 :SteppeLancer rdf:type owl:NamedIndividual ,
                        :CavalryUnit ;
-              :requires :CastleAge ;
+              :requires :CastleAge ,
+                        :Stable ;
               :strongVersus :ArcherType ,
                             :LightCavalry ,
                             :SiegeType ,
@@ -4241,25 +4294,29 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#TradeCart
 :TradeCart rdf:type owl:NamedIndividual ,
                     :CivilianUnit ;
-           :requires :FeudalAge .
+           :requires :FeudalAge ,
+                     :Market .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#TradeCog
 :TradeCog rdf:type owl:NamedIndividual ,
                    :CivilianUnit ;
-          :requires :FeudalAge .
+          :requires :Dock ,
+                    :FeudalAge .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#TransportShip
 :TransportShip rdf:type owl:NamedIndividual ,
                         :NavalUnit ;
-               :requires :DarkAge .
+               :requires :DarkAge ,
+                         :Dock .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Trebuchet
 :Trebuchet rdf:type owl:NamedIndividual ,
                     :RangedSiegeUnit ;
-           :requires :ImperialAge ;
+           :requires :Castle ,
+                     :ImperialAge ;
            :strongVersus :BuildingType ;
            :weakVersus :BombardCannon ,
                        :EagleWarrior ,
@@ -4336,7 +4393,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#TwoHandedSwordsman
 :TwoHandedSwordsman rdf:type owl:NamedIndividual ,
                              :InfantryUnit ;
-                    :requires :ImperialAge ;
+                    :requires :Barracks ,
+                              :ImperialAge ;
                     :strongVersus :BuildingType ,
                                   :CamelRider ,
                                   :EagleWarrior ,
@@ -4456,7 +4514,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Villager
 :Villager rdf:type owl:NamedIndividual ,
                    :CivilianUnit ;
-          :requires :DarkAge .
+          :requires :DarkAge ,
+                    :TownCenter .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#WarElephant
@@ -4479,7 +4538,8 @@
 ###  https://github.com/akramer-zibra/aoe2de-ontology#WarGalley
 :WarGalley rdf:type owl:NamedIndividual ,
                     :NavalUnit ;
-           :requires :CastleAge ;
+           :requires :CastleAge ,
+                     :Dock ;
            :strongVersus :BuildingType ,
                          :FishingShip ,
                          :MeleeUnit ,
