@@ -100,8 +100,16 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#upgradeOf
 :upgradeOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :Unit ;
-           rdfs:range :Unit .
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Building
+                                       :Unit
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Building
+                                      :Unit
+                                    )
+                      ] .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#versus
@@ -488,6 +496,7 @@
                       :ImperialAge ;
             :strongVersus :InfantryType ,
                           :Villager ;
+            :upgradeOf :Crossbowman ;
             :weakVersus :CavalryType ,
                         :EagleWarrior ,
                         :Huskarl ,
@@ -728,7 +737,8 @@
                              :Mangonel ,
                              :Scorpion ,
                              :SlowUnit ,
-                             :Trebuchet .
+                             :Trebuchet ;
+               :upgradeOf :SiegeTower .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#BombardTower
@@ -1023,6 +1033,7 @@
            :strongVersus :ArcherType ,
                          :BuildingType ,
                          :Trebuchet ;
+           :upgradeOf :BatteringRam ;
            :weakVersus :EliteMagyarHuszar ,
                        :MagyarHuszar ,
                        :Mangudai ,
@@ -1098,6 +1109,7 @@
                         :LightCavalry ,
                         :SiegeType ,
                         :Villager ;
+          :upgradeOf :Knight ;
           :weakVersus :Berserk ,
                       :Boyar ,
                       :CamelRider ,
@@ -1195,6 +1207,7 @@
                     :ImperialAge ;
           :strongVersus :BuildingType ,
                         :InfantryType ;
+          :upgradeOf :TwoHandedSwordsman ;
           :weakVersus :ArcherType ,
                       :Boyar ,
                       :Cataphract ,
@@ -1338,6 +1351,7 @@
                        :CastleAge ;
              :strongVersus :InfantryType ,
                            :Villager ;
+             :upgradeOf :Archer ;
              :weakVersus :BatteringRam ,
                          :CavalryType ,
                          :EagleWarrior ,
@@ -1437,6 +1451,7 @@
                               :FishingShip ,
                               :MeleeUnit ,
                               :TransportShip ;
+                :upgradeOf :DemolitionRaft ;
                 :weakVersus :BombardTower ,
                             :Castle ,
                             :DemolitionShip ,
@@ -1483,6 +1498,7 @@
               :strongVersus :ArcherType ,
                             :MonkType ,
                             :SiegeType ;
+              :upgradeOf :EagleScout ;
               :weakVersus :Boyar ,
                           :Cataphract ,
                           :HandCannoneer ,
@@ -1539,6 +1555,7 @@
                                :Stable ;
                      :strongVersus :BuildingType ,
                                    :MeleeUnit ;
+                     :upgradeOf :BattleElephant ;
                      :weakVersus :CavalryArcher ,
                                  :GenoeseCrossbowman ,
                                  :Kamayuk ,
@@ -1580,7 +1597,8 @@
                              :NavalUnit ;
                     :requires :Dock ,
                               :ImperialAge ;
-                    :strongVersus :BuildingType .
+                    :strongVersus :BuildingType ;
+                    :upgradeOf :CannonGalleon .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#EliteCaravel
@@ -1593,6 +1611,7 @@
                             :FishingShip ,
                             :MeleeUnit ,
                             :TransportShip ;
+              :upgradeOf :Caravel ;
               :weakVersus :BombardCannon ,
                           :BombardTower ,
                           :Castle ,
@@ -1639,6 +1658,7 @@
                    :strongVersus :ArcherType ,
                                  :MonkType ,
                                  :SiegeType ;
+                   :upgradeOf :EagleWarrior ;
                    :weakVersus :Boyar ,
                                :Cataphract ,
                                :HandCannoneer ,
@@ -1672,6 +1692,7 @@
                          :ImperialAge ;
                :strongVersus :ArcherType ,
                              :CavalryArcher ;
+               :upgradeOf :Genitour ;
                :weakVersus :CamelRider ,
                            :EagleWarrior ,
                            :GenoeseCrossbowman ,
@@ -1702,6 +1723,7 @@
                              :InfantryUnit ;
                     :requires :Castle ,
                               :ImperialAge ;
+                    :upgradeOf :JaguarWarrior ;
                     :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1752,6 +1774,7 @@
              :requires :Castle ,
                        :ImperialAge ,
                        :Krepost ;
+             :upgradeOf :Konnik ;
              :isUniqueUnit "true"^^xsd:boolean .
 
 
@@ -1773,6 +1796,7 @@
                              :FishingShip ,
                              :Galleon ,
                              :TransportShip ;
+               :upgradeOf :Longboat ;
                :weakVersus :BombardTower ,
                            :Castle ,
                            :FireShip ,
@@ -1864,6 +1888,7 @@
                  :requires :ArcheryRange ,
                            :CastleAge ;
                  :strongVersus :ArcherType ;
+                 :upgradeOf :Skirmisher ;
                  :weakVersus :MeleeUnit ,
                              :SiegeType .
 
@@ -1878,6 +1903,7 @@
                                  :SiegeType ,
                                  :Skirmisher ,
                                  :Villager ;
+                   :upgradeOf :SteppeLancer ;
                    :weakVersus :CamelRider ,
                                :EliteCamelArcher ,
                                :Halberdier ,
@@ -1928,6 +1954,7 @@
                            :ImperialAge ;
                  :strongVersus :BuildingType ,
                                :ShipType ;
+                 :upgradeOf :TurtleShip ;
                  :weakVersus :BombardCannon ,
                              :BombardTower ,
                              :Castle ,
@@ -2034,7 +2061,8 @@
                             :FishingShip ,
                             :Galleon ,
                             :MeleeUnit ,
-                            :TransportShip .
+                            :TransportShip ;
+              :upgradeOf :FireShip .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FastUnit
@@ -2082,7 +2110,8 @@
                         :FishingShip ,
                         :MeleeUnit ,
                         :TransportShip ,
-                        :WarGalley .
+                        :WarGalley ;
+          :upgradeOf :FireGalley .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FishTrap
@@ -2120,7 +2149,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#FortifiedWall
 :FortifiedWall rdf:type owl:NamedIndividual ,
-                        :DefensiveStructure .
+                        :DefensiveStructure ;
+               :upgradeOf :StoneWall .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Franks
@@ -2186,6 +2216,7 @@
                        :FishingShip ,
                        :MeleeUnit ,
                        :TransportShip ;
+         :upgradeOf :WarGalley ;
          :weakVersus :BombardTower ,
                      :Castle ,
                      :FireShip ,
@@ -2328,7 +2359,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#GuardTower
 :GuardTower rdf:type owl:NamedIndividual ,
-                     :DefensiveStructure .
+                     :DefensiveStructure ;
+            :upgradeOf :WatchTower .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#GunpowderType
@@ -2342,6 +2374,7 @@
             :requires :Barracks ,
                       :ImperialAge ;
             :strongVersus :CavalryType ;
+            :upgradeOf :Pikeman ;
             :weakVersus :ArcherType ,
                         :HandCannoneer ,
                         :InfantryType ,
@@ -2381,6 +2414,7 @@
                                :CavalryType ,
                                :SiegeType ,
                                :Skirmisher ;
+                 :upgradeOf :CamelRider ;
                  :weakVersus :ArcherType ,
                              :Cataphract ,
                              :InfantryType .
@@ -2394,6 +2428,7 @@
                               :ImperialAge ;
                     :strongVersus :MeleeUnit ,
                                   :SlowUnit ;
+                    :upgradeOf :CavalryArcher ;
                     :weakVersus :CamelArcher ,
                                 :CamelRider ,
                                 :EagleWarrior ,
@@ -2418,6 +2453,7 @@
                                    :FishingShip ,
                                    :MeleeUnit ,
                                    :TransportShip ;
+                     :upgradeOf :DemolitionShip ;
                      :weakVersus :BombardTower ,
                                  :Castle ,
                                  :GuardTower ,
@@ -2433,7 +2469,8 @@
                          :SiegeWorkshop ;
                :strongVersus :ArcherType ,
                              :BuildingType ,
-                             :SlowUnit .
+                             :SlowUnit ;
+               :upgradeOf :Scorpion .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#House
@@ -2513,6 +2550,7 @@
         :strongVersus :ArcherType ,
                       :MonkType ,
                       :SiegeType ;
+        :upgradeOf :LightCavalry ;
         :weakVersus :CavalryType ,
                     :InfantryType .
 
@@ -2534,6 +2572,7 @@
                                   :CavalryType ,
                                   :SiegeType ,
                                   :Skirmisher ;
+                    :upgradeOf :HeavyCamelRider ;
                     :weakVersus :Berserk ,
                                 :GenoeseCrossbowman ,
                                 :Pikeman ,
@@ -2548,6 +2587,7 @@
                               :ImperialAge ;
                     :strongVersus :ArcherType ,
                                   :Pikeman ;
+                    :upgradeOf :EliteSkirmisher ;
                     :weakVersus :MeleeUnit ,
                                 :SiegeType ;
                     :isUniqueUnit "true"^^xsd:boolean .
@@ -2852,7 +2892,8 @@
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Keep
 :Keep rdf:type owl:NamedIndividual ,
-               :DefensiveStructure .
+               :DefensiveStructure ;
+      :upgradeOf :GuardTower .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Keshik
@@ -3091,6 +3132,7 @@
                             :SiegeType ,
                             :Skirmisher ,
                             :Villager ;
+              :upgradeOf :ScoutCavalry ;
               :weakVersus :MeleeUnit .
 
 
@@ -3157,7 +3199,8 @@
                              :EagleWarrior ,
                              :LightCavalry ,
                              :Pikeman ,
-                             :Skirmisher .
+                             :Skirmisher ;
+               :upgradeOf :ManAtArms .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#Longboat
@@ -3355,6 +3398,7 @@
                          :Skirmisher ,
                          :Spearman ,
                          :Villager ;
+           :upgradeOf :Militia ;
            :weakVersus :ArcherType ,
                        :Boyar ,
                        :Cataphract ,
@@ -3547,6 +3591,7 @@
         :strongVersus :ArcherType ,
                       :BuildingType ,
                       :Villager ;
+        :upgradeOf :Mangonel ;
         :weakVersus :BombardCannon ,
                     :Condottiero ,
                     :EagleWarrior ,
@@ -3591,6 +3636,7 @@
                        :LightCavalry ,
                        :SiegeType ,
                        :Villager ;
+         :upgradeOf :Cavalier ;
          :weakVersus :Berserk ,
                      :Boyar ,
                      :CamelRider ,
@@ -3691,6 +3737,7 @@
          :requires :Barracks ,
                    :CastleAge ;
          :strongVersus :CavalryType ;
+         :upgradeOf :Spearman ;
          :weakVersus :ArcherType ,
                      :Cataphract ,
                      :InfantryType ,
@@ -3911,7 +3958,8 @@
              :requires :ImperialAge ,
                        :SiegeWorkshop ;
              :strongVersus :BuildingType ,
-                           :Trebuchet .
+                           :Trebuchet ;
+             :upgradeOf :Onager .
 
 
 ###  https://github.com/akramer-zibra/aoe2de-ontology#SiegeRam
@@ -3921,6 +3969,7 @@
                     :SiegeWorkshop ;
           :strongVersus :BuildingType ,
                         :Trebuchet ;
+          :upgradeOf :CappedRam ;
           :weakVersus :EliteMagyarHuszar ,
                       :MagyarHuszar ,
                       :Mangudai ,
@@ -4401,6 +4450,7 @@
                                   :Halberdier ,
                                   :LightCavalry ,
                                   :Skirmisher ;
+                    :upgradeOf :LongSwordsman ;
                     :weakVersus :ArcherType ,
                                 :Boyar ,
                                 :Cataphract ,
@@ -4544,6 +4594,7 @@
                          :FishingShip ,
                          :MeleeUnit ,
                          :TransportShip ;
+           :upgradeOf :Galley ;
            :weakVersus :BombardTower ,
                        :Castle ,
                        :FireShip ,
